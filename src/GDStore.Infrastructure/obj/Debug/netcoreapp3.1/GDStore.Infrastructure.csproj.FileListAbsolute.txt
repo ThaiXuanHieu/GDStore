@@ -1,0 +1,15 @@
+F:\Web\GDStore\src\GDStore.Infrastructure\bin\Debug\netcoreapp3.1\GDStore.Infrastructure.deps.json
+F:\Web\GDStore\src\GDStore.Infrastructure\bin\Debug\netcoreapp3.1\GDStore.Infrastructure.dll
+F:\Web\GDStore\src\GDStore.Infrastructure\obj\Debug\netcoreapp3.1\GDStore.Infrastructure.AssemblyInfoInputs.cache
+F:\Web\GDStore\src\GDStore.Infrastructure\obj\Debug\netcoreapp3.1\GDStore.Infrastructure.AssemblyInfo.cs
+F:\Web\GDStore\src\GDStore.Infrastructure\obj\Debug\netcoreapp3.1\GDStore.Infrastructure.csprojAssemblyReference.cache
+F:\Web\GDStore\src\GDStore.Infrastructure\bin\Debug\netcoreapp3.1\GDStore.Infrastructure.pdb
+F:\Web\GDStore\src\GDStore.Infrastructure\bin\Debug\netcoreapp3.1\GDStore.Domain.dll
+F:\Web\GDStore\src\GDStore.Infrastructure\bin\Debug\netcoreapp3.1\GDStore.Domain.pdb
+F:\Web\GDStore\src\GDStore.Infrastructure\obj\Debug\netcoreapp3.1\GDStore.Infrastructure.csproj.CopyComplete
+F:\Web\GDStore\src\GDStore.Infrastructure\obj\Debug\netcoreapp3.1\GDStore.Infrastructure.dll
+F:\Web\GDStore\src\GDStore.Infrastructure\obj\Debug\netcoreapp3.1\GDStore.Infrastructure.pdb
+F:\Web\GDStore\src\GDStore.Infrastructure\bin\Debug\netcoreapp3.1\GDStore.Infrastructure.runtimeconfig.json
+F:\Web\GDStore\src\GDStore.Infrastructure\bin\Debug\netcoreapp3.1\GDStore.Infrastructure.runtimeconfig.dev.json
+F:\Web\GDStore\src\GDStore.Infrastructure\obj\Debug\netcoreapp3.1\GDStore.Infrastructure.genruntimeconfig.cache
+F:\Web\GDStore\src\GDStore.Infrastructure\obj\Debug\netcoreapp3.1\GDStore.Infrastructure.csproj.CoreCompileInputs.cache
