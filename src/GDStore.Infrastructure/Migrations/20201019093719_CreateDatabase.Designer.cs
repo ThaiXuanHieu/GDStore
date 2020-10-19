@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GDStore.Infrastructure.Migrations
 {
     [DbContext(typeof(GDStoreDbContext))]
-    [Migration("20201017111904_CreateDatabase")]
+    [Migration("20201019093719_CreateDatabase")]
     partial class CreateDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

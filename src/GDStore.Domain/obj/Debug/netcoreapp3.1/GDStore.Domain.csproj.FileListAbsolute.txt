@@ -1,9 +1,9 @@
 F:\Web\GDStore\src\GDStore.Domain\bin\Debug\netcoreapp3.1\GDStore.Domain.deps.json
 F:\Web\GDStore\src\GDStore.Domain\bin\Debug\netcoreapp3.1\GDStore.Domain.dll
-F:\Web\GDStore\src\GDStore.Domain\obj\Debug\netcoreapp3.1\GDStore.Domain.csprojAssemblyReference.cache
 F:\Web\GDStore\src\GDStore.Domain\obj\Debug\netcoreapp3.1\GDStore.Domain.AssemblyInfoInputs.cache
 F:\Web\GDStore\src\GDStore.Domain\obj\Debug\netcoreapp3.1\GDStore.Domain.AssemblyInfo.cs
 F:\Web\GDStore\src\GDStore.Domain\bin\Debug\netcoreapp3.1\GDStore.Domain.pdb
 F:\Web\GDStore\src\GDStore.Domain\obj\Debug\netcoreapp3.1\GDStore.Domain.csproj.CoreCompileInputs.cache
 F:\Web\GDStore\src\GDStore.Domain\obj\Debug\netcoreapp3.1\GDStore.Domain.dll
 F:\Web\GDStore\src\GDStore.Domain\obj\Debug\netcoreapp3.1\GDStore.Domain.pdb
+F:\Web\GDStore\src\GDStore.Domain\obj\Debug\netcoreapp3.1\GDStore.Domain.csprojAssemblyReference.cache
