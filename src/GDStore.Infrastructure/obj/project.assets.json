@@ -1573,6 +1573,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "GDStore.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "GDStore.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/GDStore.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GDStore.Application.dll": {}
+        }
+      },
       "GDStore.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -5855,6 +5868,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "GDStore.Application/1.0.0": {
+      "type": "project",
+      "path": "../GDStore.Application/GDStore.Application.csproj",
+      "msbuildProject": "../GDStore.Application/GDStore.Application.csproj"
+    },
     "GDStore.Domain/1.0.0": {
       "type": "project",
       "path": "../GDStore.Domain/GDStore.Domain.csproj",
@@ -5863,6 +5881,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "GDStore.Application >= 1.0.0",
       "GDStore.Domain >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.9",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.9",
@@ -5900,6 +5919,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "F:\\Web\\GDStore\\src\\GDStore.Application\\GDStore.Application.csproj": {
+              "projectPath": "F:\\Web\\GDStore\\src\\GDStore.Application\\GDStore.Application.csproj"
+            },
             "F:\\Web\\GDStore\\src\\GDStore.Domain\\GDStore.Domain.csproj": {
               "projectPath": "F:\\Web\\GDStore\\src\\GDStore.Domain\\GDStore.Domain.csproj"
             }

@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GDStore.Application\GDStore.Application.csproj" />
     <ProjectReference Include="..\GDStore.Domain\GDStore.Domain.csproj" />
   </ItemGroup>
 
