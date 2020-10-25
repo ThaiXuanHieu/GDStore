@@ -1,10 +1,6 @@
-﻿using GDStore.Application.Interfaces;
-using GDStore.Application.Interfaces.Repositories;
-using GDStore.Infrastructure.Persistence;
+﻿using GDStore.Infrastructure.Persistence;
 using GDStore.Infrastructure.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using GDStore.Infrastructure.Repositories.Interfaces;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,7 +12,6 @@ namespace GDStore.Infrastructure
         private IBrandRepository _brandRepository;
         private ICategoryRepository _categoryRepository;
         public IBrandRepository Brands => _brandRepository ?? (_brandRepository = new BrandRepository(_context));
-
         public ICategoryRepository Categories => _categoryRepository ?? (_categoryRepository = new CategoryRepository(_context));
 
         public UnitOfWork(GDStoreDbContext context)

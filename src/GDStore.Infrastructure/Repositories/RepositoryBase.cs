@@ -1,5 +1,5 @@
-﻿using GDStore.Application.Interfaces.Repositories;
-using GDStore.Infrastructure.Persistence;
+﻿using GDStore.Infrastructure.Persistence;
+using GDStore.Infrastructure.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

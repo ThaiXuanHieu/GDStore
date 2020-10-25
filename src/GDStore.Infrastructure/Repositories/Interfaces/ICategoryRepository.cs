@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace GDStore.Application.Interfaces.Repositories
+namespace GDStore.Infrastructure.Repositories.Interfaces
 {
     public interface ICategoryRepository : IRepositoryBase<Category>
     {

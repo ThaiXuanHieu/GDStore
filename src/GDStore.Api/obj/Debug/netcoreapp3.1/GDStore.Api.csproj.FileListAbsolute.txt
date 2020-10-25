@@ -69,3 +69,5 @@ F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.genruntimecon
 F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.csproj.CoreCompileInputs.cache
 F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.MvcApplicationPartsAssemblyInfo.cache
+F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\GDStore.Application.dll
+F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\GDStore.Application.pdb

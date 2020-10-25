@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GDStore.Application.Interfaces.Repositories
+namespace GDStore.Infrastructure.Repositories.Interfaces
 {
     public interface IRepositoryBase<TEntity>
     {

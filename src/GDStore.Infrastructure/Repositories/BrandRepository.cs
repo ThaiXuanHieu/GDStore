@@ -1,9 +1,6 @@
-﻿using GDStore.Application.Interfaces.Repositories;
-using GDStore.Domain.Entities;
+﻿using GDStore.Domain.Entities;
 using GDStore.Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using GDStore.Infrastructure.Repositories.Interfaces;
 
 namespace GDStore.Infrastructure.Repositories
 {
