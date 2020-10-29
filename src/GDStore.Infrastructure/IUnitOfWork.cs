@@ -9,6 +9,6 @@ namespace GDStore.Infrastructure
     {
         IBrandRepository Brands { get; }
         ICategoryRepository Categories { get; }
-        Task<int> SaveChangeAsync(CancellationToken cancellationToken);
+        Task<int> SaveChangeAsync();
     }
 }

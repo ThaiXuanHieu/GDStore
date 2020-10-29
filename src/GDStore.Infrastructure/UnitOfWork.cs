@@ -23,9 +23,9 @@ namespace GDStore.Infrastructure
             _context.Dispose();
         }
 
-        public async Task<int> SaveChangeAsync(CancellationToken cancellationToken = new CancellationToken())
+        public async Task<int> SaveChangeAsync()
         {
-            return await _context.SaveChangesAsync(cancellationToken);
+            return await _context.SaveChangesAsync();
         }
     }
 }
