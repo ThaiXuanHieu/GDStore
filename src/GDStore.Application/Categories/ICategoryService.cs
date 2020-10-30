@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GDStore.Application.Brand
+namespace GDStore.Application.Categories
 {
-    public interface IBrandService
+    public interface ICategoryService
     {
     }
 }

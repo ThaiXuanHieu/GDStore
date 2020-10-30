@@ -1,7 +1,8 @@
-﻿using GDStore.Infrastructure.FileStorage;
+﻿using GDStore.Application.Interfaces;
+using GDStore.Application.Interfaces.Repositories;
 using GDStore.Infrastructure.Persistence;
 using GDStore.Infrastructure.Repositories;
-using GDStore.Infrastructure.Repositories.Interfaces;
+using GDStore.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

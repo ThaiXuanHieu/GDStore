@@ -1,6 +1,6 @@
-﻿using GDStore.Domain.Entities;
+﻿using GDStore.Application.Interfaces.Repositories;
+using GDStore.Domain.Entities;
 using GDStore.Infrastructure.Persistence;
-using GDStore.Infrastructure.Repositories.Interfaces;
 
 namespace GDStore.Infrastructure.Repositories
 {
@@ -8,7 +8,7 @@ namespace GDStore.Infrastructure.Repositories
     {
         public BrandRepository(GDStoreDbContext context) : base(context)
         {
-
         }
+
     }
 }

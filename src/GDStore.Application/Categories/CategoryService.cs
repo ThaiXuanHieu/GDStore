@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GDStore.Application.Category
+namespace GDStore.Application.Categories
 {
     public class CategoryService : ICategoryService
     {

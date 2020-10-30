@@ -1,8 +1,9 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
+using GDStore.Application.Interfaces;
 using Microsoft.AspNetCore.Hosting;
 
-namespace GDStore.Infrastructure.FileStorage
+namespace GDStore.Infrastructure.Services
 {
     public class FileStorageService : IStorageService
     {

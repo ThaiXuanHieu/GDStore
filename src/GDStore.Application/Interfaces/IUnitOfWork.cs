@@ -1,9 +1,8 @@
-﻿using GDStore.Infrastructure.Repositories.Interfaces;
+﻿using GDStore.Application.Interfaces.Repositories;
 using System;
-using System.Threading;
 using System.Threading.Tasks;
 
-namespace GDStore.Infrastructure
+namespace GDStore.Application.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {

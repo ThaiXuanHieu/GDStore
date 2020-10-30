@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 
-namespace GDStore.Infrastructure.FileStorage
+namespace GDStore.Application.Interfaces
 {
     public interface IStorageService
     {

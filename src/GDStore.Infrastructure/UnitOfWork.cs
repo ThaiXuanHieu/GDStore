@@ -1,7 +1,7 @@
-﻿using GDStore.Infrastructure.Persistence;
+﻿using GDStore.Application.Interfaces;
+using GDStore.Application.Interfaces.Repositories;
+using GDStore.Infrastructure.Persistence;
 using GDStore.Infrastructure.Repositories;
-using GDStore.Infrastructure.Repositories.Interfaces;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace GDStore.Infrastructure

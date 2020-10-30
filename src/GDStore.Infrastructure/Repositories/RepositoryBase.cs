@@ -1,11 +1,10 @@
-﻿using GDStore.Infrastructure.Persistence;
-using GDStore.Infrastructure.Repositories.Interfaces;
+﻿using GDStore.Application.Interfaces.Repositories;
+using GDStore.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GDStore.Infrastructure.Repositories
