@@ -10,11 +10,9 @@ namespace GDStore.Domain.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public int? ParentId { set; get; }
-        public int CreatedBy { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public int UpdatedBy { get; set; }
-        public DateTime UpdatedDate { get; set; }
-        public bool IsShowOnHome { get; set; }
+        public Guid UserId { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public bool? IsShowOnHome { get; set; }
         public IList<ProductCategory> ProductCategories { get; private set; } = new List<ProductCategory>();
     }
 }

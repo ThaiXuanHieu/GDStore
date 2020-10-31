@@ -12,10 +12,8 @@ namespace GDStore.Domain.Entities
         public decimal Price { get; set; }
         public string Description { get; set; }
         public int Rating { get; set; }
-        public int CreatedBy { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public int UpdatedBy { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public Guid UserId { get; set; }
+        public DateTime? CreatedDate { get; set; }
         public int BrandId { get; set; }
         public Brand Brand { get; set; }
         public List<ProductImage> ProductImages { get; set; }
