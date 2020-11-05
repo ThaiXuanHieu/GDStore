@@ -1100,7 +1100,8 @@
       },
       "GDStore.Application/1.0.0": {
         "dependencies": {
-          "GDStore.Domain": "1.0.0"
+          "GDStore.Domain": "1.0.0",
+          "GDStore.ViewModel": "1.0.0"
         },
         "runtime": {
           "GDStore.Application.dll": {}
@@ -1112,6 +1113,11 @@
         },
         "runtime": {
           "GDStore.Domain.dll": {}
+        }
+      },
+      "GDStore.ViewModel/1.0.0": {
+        "runtime": {
+          "GDStore.ViewModel.dll": {}
         }
       }
     }
@@ -1870,6 +1876,11 @@
       "sha512": ""
     },
     "GDStore.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GDStore.ViewModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

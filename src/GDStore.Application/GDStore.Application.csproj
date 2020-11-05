@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GDStore.Domain\GDStore.Domain.csproj" />
+    <ProjectReference Include="..\GDStore.ViewModel\GDStore.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

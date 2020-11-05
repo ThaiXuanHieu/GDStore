@@ -76,3 +76,5 @@ F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Sw
 F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.csproj.CoreCompileInputs.cache
 F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.MvcApplicationPartsAssemblyInfo.cs
 F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.MvcApplicationPartsAssemblyInfo.cache
+F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\GDStore.ViewModel.dll
+F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\GDStore.ViewModel.pdb

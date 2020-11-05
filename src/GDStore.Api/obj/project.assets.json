@@ -1651,7 +1651,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "GDStore.Domain": "1.0.0"
+          "GDStore.Domain": "1.0.0",
+          "GDStore.ViewModel": "1.0.0"
         },
         "compile": {
           "bin/placeholder/GDStore.Application.dll": {}
@@ -1692,6 +1693,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "GDStore.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/GDStore.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GDStore.ViewModel.dll": {}
+        }
       }
     }
   },
@@ -6083,11 +6094,17 @@
       "type": "project",
       "path": "../GDStore.Infrastructure/GDStore.Infrastructure.csproj",
       "msbuildProject": "../GDStore.Infrastructure/GDStore.Infrastructure.csproj"
+    },
+    "GDStore.ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../GDStore.ViewModel/GDStore.ViewModel.csproj",
+      "msbuildProject": "../GDStore.ViewModel/GDStore.ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "GDStore.Infrastructure >= 1.0.0",
+      "GDStore.ViewModel >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.9",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
@@ -6124,6 +6141,9 @@
           "projectReferences": {
             "F:\\Web\\GDStore\\src\\GDStore.Infrastructure\\GDStore.Infrastructure.csproj": {
               "projectPath": "F:\\Web\\GDStore\\src\\GDStore.Infrastructure\\GDStore.Infrastructure.csproj"
+            },
+            "F:\\Web\\GDStore\\src\\GDStore.ViewModel\\GDStore.ViewModel.csproj": {
+              "projectPath": "F:\\Web\\GDStore\\src\\GDStore.ViewModel\\GDStore.ViewModel.csproj"
             }
           }
         }

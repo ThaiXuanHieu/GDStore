@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GDStore.Infrastructure\GDStore.Infrastructure.csproj" />
+    <ProjectReference Include="..\GDStore.ViewModel\GDStore.ViewModel.csproj" />
   </ItemGroup>
 
 

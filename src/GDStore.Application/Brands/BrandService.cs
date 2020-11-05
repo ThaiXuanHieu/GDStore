@@ -1,7 +1,10 @@
 ﻿using GDStore.Application.Interfaces;
+using GDStore.Domain.Entities;
+using GDStore.ViewModel.Brands;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,9 +19,66 @@ namespace GDStore.Application.Brands
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<IEnumerable> GetBrands()
+        public async Task Add(BrandCreateRequest request)
         {
-            return await _unitOfWork.Brands.GetAllAsync();
+            var brand = new Brand();
+            brand.Name = request.Name;
+            brand.Logo = request.Logo;
+            brand.CreatedDate = DateTime.Now;
+            await _unitOfWork.Brands.Add(brand);
+            await _unitOfWork.SaveChangeAsync();
+        }
+
+        public async Task<IEnumerable<BrandVm>> GetBrands()
+        {
+            var brands = await _unitOfWork.Brands.GetAllAsync();
+            var brandVm = brands.Select(c => new BrandVm
+            {
+                Id = c.Id,
+                Name = c.Name,
+                Logo = c.Logo
+            });
+
+            return brandVm;
+        }
+
+        public async Task Update(BrandUpdateRequest request)
+        {
+            var brand = await _unitOfWork.Brands.FirstOrDefaultAsync(b => b.Id == request.Id);
+            if (brand == null)
+            {
+
+            }
+
+            brand.Name = request.Name;
+            brand.Logo = request.Logo;
+
+            _unitOfWork.Brands.Update(brand);
+            await _unitOfWork.SaveChangeAsync();
+
+        }
+
+        public async Task Delete(int id)
+        {
+            var brand = await _unitOfWork.Brands.FirstOrDefaultAsync(b => b.Id == id);
+            if (brand == null)
+            {
+
+            }
+
+            _unitOfWork.Brands.Remove(brand);
+            await _unitOfWork.SaveChangeAsync();
+        }
+
+        public async Task<BrandVm> GetById(int id)
+        {
+            var brand = await _unitOfWork.Brands.FirstOrDefaultAsync(b => b.Id == id);
+            if (brand == null)
+            {
+
+            }
+
+            return new BrandVm(brand.Id, brand.Name, brand.Logo);
         }
     }
 }

@@ -302,6 +302,16 @@
         "runtime": {
           "bin/placeholder/GDStore.Domain.dll": {}
         }
+      },
+      "GDStore.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/GDStore.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GDStore.ViewModel.dll": {}
+        }
       }
     }
   },
@@ -822,11 +832,17 @@
       "type": "project",
       "path": "../GDStore.Domain/GDStore.Domain.csproj",
       "msbuildProject": "../GDStore.Domain/GDStore.Domain.csproj"
+    },
+    "GDStore.ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../GDStore.ViewModel/GDStore.ViewModel.csproj",
+      "msbuildProject": "../GDStore.ViewModel/GDStore.ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "GDStore.Domain >= 1.0.0"
+      "GDStore.Domain >= 1.0.0",
+      "GDStore.ViewModel >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -861,6 +877,9 @@
           "projectReferences": {
             "F:\\Web\\GDStore\\src\\GDStore.Domain\\GDStore.Domain.csproj": {
               "projectPath": "F:\\Web\\GDStore\\src\\GDStore.Domain\\GDStore.Domain.csproj"
+            },
+            "F:\\Web\\GDStore\\src\\GDStore.ViewModel\\GDStore.ViewModel.csproj": {
+              "projectPath": "F:\\Web\\GDStore\\src\\GDStore.ViewModel\\GDStore.ViewModel.csproj"
             }
           }
         }
