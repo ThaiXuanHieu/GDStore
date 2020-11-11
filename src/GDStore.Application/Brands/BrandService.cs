@@ -1,4 +1,5 @@
-﻿using GDStore.Application.Interfaces;
+﻿using GDStore.Application.Exceptions;
+using GDStore.Application.Interfaces;
 using GDStore.Domain.Entities;
 using GDStore.ViewModel.Brands;
 using System;
@@ -47,7 +48,7 @@ namespace GDStore.Application.Brands
             var brand = await _unitOfWork.Brands.FirstOrDefaultAsync(b => b.Id == request.Id);
             if (brand == null)
             {
-
+                throw new NotFoundException(nameof(Brand), request.Id);
             }
 
             brand.Name = request.Name;
@@ -63,7 +64,7 @@ namespace GDStore.Application.Brands
             var brand = await _unitOfWork.Brands.FirstOrDefaultAsync(b => b.Id == id);
             if (brand == null)
             {
-
+                throw new NotFoundException(nameof(Brand), id);
             }
 
             _unitOfWork.Brands.Remove(brand);
@@ -75,7 +76,7 @@ namespace GDStore.Application.Brands
             var brand = await _unitOfWork.Brands.FirstOrDefaultAsync(b => b.Id == id);
             if (brand == null)
             {
-
+                throw new NotFoundException(nameof(Brand), id);
             }
 
             return new BrandVm(brand.Id, brand.Name, brand.Logo);

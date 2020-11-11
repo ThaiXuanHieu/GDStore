@@ -21,24 +21,21 @@ namespace GDStore.Api.Controllers
             _brandService = brandService;
         }    
 
-        [HttpGet]
-        [Route("~/api/GetAll")]
+        [HttpGet("GetBrands")]
         public async Task<IActionResult> GetAll()
         {
             var brands = await _brandService.GetBrands();
             return Ok(brands);
         }
 
-        [HttpGet]
-        [Route("~/api/GetById/{id}")]
+        [HttpGet("GetById/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var brand = await _brandService.GetById(id);
             return Ok(brand);
         }
 
-        [HttpPost]
-        [Route("~/api/Add")]
+        [HttpPost("AddBrand")]
         public async Task<IActionResult> Add([FromForm] BrandCreateRequest request)
         {
             if (!ModelState.IsValid)
@@ -51,8 +48,7 @@ namespace GDStore.Api.Controllers
             return Ok();
         }
 
-        [HttpPut]
-        [Route("~/api/Update")]
+        [HttpPut("UpdateBrand")]
         public async Task<IActionResult> Update([FromForm] BrandUpdateRequest request)
         {
             if (!ModelState.IsValid)
@@ -65,8 +61,7 @@ namespace GDStore.Api.Controllers
             return Ok();
         }
 
-        [HttpDelete]
-        [Route("~/api/Delete/{id}")]
+        [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             await _brandService.Delete(id);

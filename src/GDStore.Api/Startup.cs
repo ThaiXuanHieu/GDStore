@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GDStore.Application.Brands;
+using GDStore.Application.Categories;
 using GDStore.Domain.Entities;
 using GDStore.Infrastructure;
 using GDStore.Infrastructure.Persistence;
@@ -33,6 +34,7 @@ namespace GDStore.Api
         {
             services.AddInfrastructure(Configuration);
             services.AddTransient<IBrandService, BrandService>();
+            services.AddTransient<ICategoryService, CategoryService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
