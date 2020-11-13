@@ -11,28 +11,28 @@ namespace GDStore.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController : ControllerBase
+    public class CategoriesController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
-        public CategoryController(ICategoryService categoryService)
+        public CategoriesController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
         }
 
-        [HttpGet("GetCategories")]
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var categories = await _categoryService.GetCategories();
             return Ok(categories);
         }
 
-        [HttpGet("GetById/{Id}")]
+        [HttpGet("{Id}")]
         public async Task<IActionResult> GetById(int id)
         {
             return Ok(await _categoryService.GetById(id));
         }
 
-        [HttpPost("AddCategory")]
+        [HttpPost]
         public async Task<IActionResult> AddCategory([FromForm] CategoryCreateRequest request)
         {
             if(!ModelState.IsValid)
@@ -43,7 +43,7 @@ namespace GDStore.Api.Controllers
             return Ok();
         }
 
-        [HttpPut("UpdateCategory")]
+        [HttpPut]
         public async Task<IActionResult> UpdateCategory([FromForm] CategoryUpdateRequest request)
         {
             if (!ModelState.IsValid)
@@ -54,7 +54,7 @@ namespace GDStore.Api.Controllers
             return Ok();
         }
 
-        [HttpDelete("DeleteCategory/{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {
             await _categoryService.Delete(id);
