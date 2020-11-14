@@ -78,3 +78,5 @@ F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.MvcApplicatio
 F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.MvcApplicationPartsAssemblyInfo.cache
 F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\GDStore.ViewModel.dll
 F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\GDStore.ViewModel.pdb
+F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll

@@ -8,6 +8,7 @@ namespace GDStore.Application.Interfaces
     {
         IBrandRepository Brands { get; }
         ICategoryRepository Categories { get; }
+        IProductRepository Products { get; }
         Task<int> SaveChangeAsync();
     }
 }
