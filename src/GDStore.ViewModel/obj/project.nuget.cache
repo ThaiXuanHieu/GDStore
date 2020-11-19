@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "BCyfj48gB6DX0J+vGCWL9A9ukVP0B2G72TzigEiuul/RUzorVXFOnCif/bOZ5pvexiWMlmlwUhzYEfIz/n2sDQ==",
+  "dgSpecHash": "i71lOs0dG5unG3ikeBny2BCEMhBPtDBAkEc9EVxu9BCAGITauRQUbgcf415MQplLZaz/ESg+SnE775Jm99yIfg==",
   "success": true,
   "projectFilePath": "F:\\Web\\GDStore\\src\\GDStore.ViewModel\\GDStore.ViewModel.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Hieu XT\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
+    "C:\\Users\\Hieu XT\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.3.0\\fluentvalidation.aspnetcore.9.3.0.nupkg.sha512",
+    "C:\\Users\\Hieu XT\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.3.0\\fluentvalidation.dependencyinjectionextensions.9.3.0.nupkg.sha512",
     "C:\\Users\\Hieu XT\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.9\\microsoft.aspnetcore.cryptography.internal.3.1.9.nupkg.sha512",
     "C:\\Users\\Hieu XT\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.9\\microsoft.aspnetcore.cryptography.keyderivation.3.1.9.nupkg.sha512",
     "C:\\Users\\Hieu XT\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.0\\microsoft.aspnetcore.http.features.5.0.0.nupkg.sha512",

@@ -4,14 +4,14 @@
     "F:\\Web\\GDStore\\src\\GDStore.MVC\\GDStore.MVC.csproj": {}
   },
   "projects": {
-    "F:\\Web\\GDStore\\src\\GDStore.MVC\\GDStore.MVC.csproj": {
+    "F:\\Web\\GDStore\\src\\GDStore.Domain\\GDStore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Web\\GDStore\\src\\GDStore.MVC\\GDStore.MVC.csproj",
-        "projectName": "GDStore.MVC",
-        "projectPath": "F:\\Web\\GDStore\\src\\GDStore.MVC\\GDStore.MVC.csproj",
+        "projectUniqueName": "F:\\Web\\GDStore\\src\\GDStore.Domain\\GDStore.Domain.csproj",
+        "projectName": "GDStore.Domain",
+        "projectPath": "F:\\Web\\GDStore\\src\\GDStore.Domain\\GDStore.Domain.csproj",
         "packagesPath": "C:\\Users\\Hieu XT\\.nuget\\packages\\",
-        "outputPath": "F:\\Web\\GDStore\\src\\GDStore.MVC\\obj\\",
+        "outputPath": "F:\\Web\\GDStore\\src\\GDStore.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -40,6 +40,153 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Web\\GDStore\\src\\GDStore.MVC\\GDStore.MVC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Web\\GDStore\\src\\GDStore.MVC\\GDStore.MVC.csproj",
+        "projectName": "GDStore.MVC",
+        "projectPath": "F:\\Web\\GDStore\\src\\GDStore.MVC\\GDStore.MVC.csproj",
+        "packagesPath": "C:\\Users\\Hieu XT\\.nuget\\packages\\",
+        "outputPath": "F:\\Web\\GDStore\\src\\GDStore.MVC\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Hieu XT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "F:\\Web\\GDStore\\src\\GDStore.ViewModel\\GDStore.ViewModel.csproj": {
+                "projectPath": "F:\\Web\\GDStore\\src\\GDStore.ViewModel\\GDStore.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\Web\\GDStore\\src\\GDStore.ViewModel\\GDStore.ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Web\\GDStore\\src\\GDStore.ViewModel\\GDStore.ViewModel.csproj",
+        "projectName": "GDStore.ViewModel",
+        "projectPath": "F:\\Web\\GDStore\\src\\GDStore.ViewModel\\GDStore.ViewModel.csproj",
+        "packagesPath": "C:\\Users\\Hieu XT\\.nuget\\packages\\",
+        "outputPath": "F:\\Web\\GDStore\\src\\GDStore.ViewModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Hieu XT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "F:\\Web\\GDStore\\src\\GDStore.Domain\\GDStore.Domain.csproj": {
+                "projectPath": "F:\\Web\\GDStore\\src\\GDStore.Domain\\GDStore.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[9.3.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,0 +1,100 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+}
+<h1 class="title-content">Danh sách sản phẩm</h1>
+<div class="row mt-3 mb-3">
+    <div class="col-md-2">
+        <a asp-action="Add" asp-controller="Product" class="btn btn-primary"><i class="fas fa-plus"></i> Thêm sản phẩm</a>
+    </div>
+    <div class="col-md-4 mb-2 p-0">
+        <form action="" method="post">
+            <div class="input-group">
+                <input type="text" class="form-control bg-light border-1 small"
+                       placeholder="Nhập tên sản phẩm... " aria-label="Search"
+                       aria-describedby="basic-addon2" required>
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th><input type="checkbox" name="" id=""> Chọn tất cả</th>
+                <th>Mã sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>1</td>
+                <td>Giày Thể Thao Nam Biti's Hunter X Matcha DSMH03400XMN (Xanh Mi Nơ)</td>
+                <td>590.000₫</td>
+                <td>
+                    <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                    <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>2</td>
+                <td>Giày Thể Thao Nam Biti's Hunter Street DSMH04300XNH (Xanh Nhớt)</td>
+                <td>690.000₫</td>
+                <td>
+                    <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                    <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>3</td>
+                <td>Sandal Nam Biti's Hunter DEMH00600XAM (Xám)</td>
+                <td>300.000₫</td>
+                <td>
+                    <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                    <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>4</td>
+                <td>Dentsu Redder - Hương Giang - Vietnamese Canvas of Pride (Women)</td>
+                <td>650.000₫</td>
+                <td>
+                    <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                    <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>5</td>
+                <td>Giày Thể Thao Nữ Biti's Hunter X BKL - Midnight Black Inverted DSWH02302DEN (Đen)</td>
+                <td>790.000₫</td>
+                <td>
+                    <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                    <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Đầu</a></li>
+    <li class="page-item"><a class="page-link" href="#">Trước</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Tiếp</a></li>
+    <li class="page-item"><a class="page-link" href="#">Cuối</a></li>
+</ul>

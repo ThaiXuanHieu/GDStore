@@ -9,7 +9,6 @@ namespace GDStore.ViewModel.Products
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Slug { get; set; }
         public decimal OriginalPrice { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }

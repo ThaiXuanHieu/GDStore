@@ -73,10 +73,13 @@ F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
-F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.csproj.CoreCompileInputs.cache
-F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.MvcApplicationPartsAssemblyInfo.cs
-F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.MvcApplicationPartsAssemblyInfo.cache
 F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\GDStore.ViewModel.dll
 F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\GDStore.ViewModel.pdb
 F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
 F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\FluentValidation.dll
+F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+F:\Web\GDStore\src\GDStore.Api\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.csproj.CoreCompileInputs.cache
+F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.MvcApplicationPartsAssemblyInfo.cs
+F:\Web\GDStore\src\GDStore.Api\obj\Debug\netcoreapp3.1\GDStore.Api.MvcApplicationPartsAssemblyInfo.cache
