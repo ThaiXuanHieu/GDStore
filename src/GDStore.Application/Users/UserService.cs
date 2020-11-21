@@ -15,8 +15,8 @@ namespace GDStore.Application.Users
 {
     public class UserService : IUserService
     {
-        private readonly UserManager<AppUser> _userManager; 
-        private readonly SignInManager<AppUser> _signInManager; 
+        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<AppRole> _roleManager;
         private readonly IConfiguration _config;
         public UserService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager,
@@ -30,7 +30,7 @@ namespace GDStore.Application.Users
         public async Task<ApiResult<string>> Login(LoginRequest request)
         {
             var user = await _userManager.FindByNameAsync(request.UserName);
-            if(user == null)
+            if (user == null)
             {
                 return new ApiErrorResult<string>("Tên đăng nhập không tồn tại");
             }
@@ -44,8 +44,8 @@ namespace GDStore.Application.Users
             var roles = await _userManager.GetRolesAsync(user);
             var claims = new[]
             {
-                new Claim(ClaimTypes.Email,user.Email),
-                new Claim(ClaimTypes.GivenName,user.FirstName),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.GivenName, user.FirstName + user.LastName),
                 new Claim(ClaimTypes.Role, string.Join(";",roles)),
                 new Claim(ClaimTypes.Name, request.UserName)
             };

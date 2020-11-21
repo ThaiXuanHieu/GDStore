@@ -1,6 +1,8 @@
 using FluentValidation.AspNetCore;
 using GDStore.Application.Brands;
 using GDStore.Application.Categories;
+using GDStore.Application.Products;
+using GDStore.Application.Users;
 using GDStore.Domain.Entities;
 using GDStore.Infrastructure;
 using GDStore.Infrastructure.Persistence;
@@ -31,6 +33,8 @@ namespace GDStore.Api
 
             services.AddTransient<IBrandService, BrandService>();
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IUserService, UserService>();
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();

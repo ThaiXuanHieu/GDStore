@@ -26,7 +26,7 @@ namespace GDStore.Api.Controllers
             return Ok(categories);
         }
 
-        [HttpGet("{Id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             return Ok(await _categoryService.GetById(id));
