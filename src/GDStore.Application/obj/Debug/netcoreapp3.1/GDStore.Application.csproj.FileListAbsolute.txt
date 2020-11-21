@@ -9,6 +9,6 @@ F:\Web\GDStore\src\GDStore.Application\obj\Debug\netcoreapp3.1\GDStore.Applicati
 F:\Web\GDStore\src\GDStore.Application\bin\Debug\netcoreapp3.1\GDStore.Domain.dll
 F:\Web\GDStore\src\GDStore.Application\bin\Debug\netcoreapp3.1\GDStore.Domain.pdb
 F:\Web\GDStore\src\GDStore.Application\obj\Debug\netcoreapp3.1\GDStore.Application.csproj.CopyComplete
-F:\Web\GDStore\src\GDStore.Application\obj\Debug\netcoreapp3.1\GDStore.Application.csproj.CoreCompileInputs.cache
 F:\Web\GDStore\src\GDStore.Application\bin\Debug\netcoreapp3.1\GDStore.ViewModel.dll
 F:\Web\GDStore\src\GDStore.Application\bin\Debug\netcoreapp3.1\GDStore.ViewModel.pdb
+F:\Web\GDStore\src\GDStore.Application\obj\Debug\netcoreapp3.1\GDStore.Application.csproj.CoreCompileInputs.cache

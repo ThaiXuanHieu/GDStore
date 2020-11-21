@@ -9,7 +9,7 @@ using System.Text;
 
 namespace GDStore.Infrastructure.Persistence
 {
-    public class GDStoreDbContext : IdentityDbContext
+    public class GDStoreDbContext : IdentityDbContext<AppUser, AppRole, Guid>
     {
         public GDStoreDbContext(DbContextOptions<GDStoreDbContext> options) : base(options)
         {

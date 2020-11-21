@@ -67,3 +67,8 @@ F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.ViewModel.pdb
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.Domain.pdb
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Product\Add.cshtml.g.cs
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Product\Edit.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\System.Net.Http.Json.dll
+F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.csproj.CoreCompileInputs.cache
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.MvcApplicationPartsAssemblyInfo.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.MvcApplicationPartsAssemblyInfo.cache

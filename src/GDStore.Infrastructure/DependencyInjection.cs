@@ -1,8 +1,10 @@
 ﻿using GDStore.Application.Interfaces;
 using GDStore.Application.Interfaces.Repositories;
+using GDStore.Domain.Entities;
 using GDStore.Infrastructure.Persistence;
 using GDStore.Infrastructure.Repositories;
 using GDStore.Infrastructure.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +18,10 @@ namespace GDStore.Infrastructure
             services.AddDbContext<GDStoreDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly(typeof(GDStoreDbContext).Assembly.FullName)));
+
+            services.AddIdentity<AppUser, AppRole>()
+                .AddEntityFrameworkStores<GDStoreDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddTransient<IStorageService, FileStorageService>();
 

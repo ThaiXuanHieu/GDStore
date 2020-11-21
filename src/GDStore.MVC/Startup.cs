@@ -1,4 +1,5 @@
 using FluentValidation.AspNetCore;
+using GDStore.MVC.Services;
 using GDStore.ViewModel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,7 +21,10 @@ namespace GDStore.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpClient();
+            services.AddHttpClient<IProductApiClient, ProductApiClient>();
             services.AddControllersWithViews().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>());
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
