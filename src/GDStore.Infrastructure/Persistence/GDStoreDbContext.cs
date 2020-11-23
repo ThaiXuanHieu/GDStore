@@ -31,7 +31,7 @@ namespace GDStore.Infrastructure.Persistence
 
             builder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
             builder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
-            base.OnModelCreating(builder);
+            //base.OnModelCreating(builder);
         }
     }
 }

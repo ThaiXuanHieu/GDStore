@@ -29,13 +29,14 @@ namespace GDStore.Application.Users
         }
         public async Task<ApiResult<string>> Login(LoginRequest request)
         {
-            var user = await _userManager.FindByNameAsync(request.UserName);
+            var user = await _userManager.FindByEmailAsync(request.Email);
+            //var user = await _userManager.FindByNameAsync(request.UserName);
             if (user == null)
             {
-                return new ApiErrorResult<string>("Tên đăng nhập không tồn tại");
+                return new ApiErrorResult<string>("Email không tồn tại");
             }
 
-            var result = await _signInManager.PasswordSignInAsync(user, request.Password, true, true);
+            var result = await _signInManager.PasswordSignInAsync(request.Email, request.Password, false, true);
             if (!result.Succeeded)
             {
                 return new ApiErrorResult<string>("Mật khẩu không chính xác");
@@ -47,7 +48,6 @@ namespace GDStore.Application.Users
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.GivenName, user.FirstName + user.LastName),
                 new Claim(ClaimTypes.Role, string.Join(";",roles)),
-                new Claim(ClaimTypes.Name, request.UserName)
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

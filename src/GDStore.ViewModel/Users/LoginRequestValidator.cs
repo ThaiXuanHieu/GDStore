@@ -9,7 +9,8 @@ namespace GDStore.ViewModel.Users
     {
         public LoginRequestValidator()
         {
-            RuleFor(x => x.UserName).NotEmpty().WithMessage("Tên đăng nhập không được để trống");
+            RuleFor(x => x.Email).NotEmpty().WithMessage("Email không được để trống");
+            RuleFor(x => x.Email).EmailAddress().WithMessage("Email không đúng định dạng");
             RuleFor(x => x.Password).NotEmpty().WithMessage("Mật khẩu không được để trống")
                 .MinimumLength(6).WithMessage("Mật khẩu phải ít nhất 6 ký tự");
         }

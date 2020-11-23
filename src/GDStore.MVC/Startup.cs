@@ -23,6 +23,7 @@ namespace GDStore.MVC
         {
             services.AddHttpClient();
             services.AddHttpClient<IProductApiClient, ProductApiClient>();
+            services.AddHttpClient<IUserApiClient, UserApiClient>();
             services.AddControllersWithViews().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>());
             
         }
@@ -51,7 +52,7 @@ namespace GDStore.MVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Account}/{action=Login}/{id?}");
             });
         }
     }

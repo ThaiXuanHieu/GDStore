@@ -69,6 +69,17 @@ F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Product\Add.c
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Product\Edit.cshtml.g.cs
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\System.Net.Http.Json.dll
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutAccount.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.Application.dll
+F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.Application.pdb
+F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.csproj.CoreCompileInputs.cache
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.MvcApplicationPartsAssemblyInfo.cs
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.MvcApplicationPartsAssemblyInfo.cache
