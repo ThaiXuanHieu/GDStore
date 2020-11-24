@@ -23,7 +23,7 @@ namespace GDStore.Api.Controllers
 
         [HttpPost("Login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login([FromForm] LoginRequest request)
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             if (!ModelState.IsValid)
             {
@@ -38,5 +38,6 @@ namespace GDStore.Api.Controllers
 
             return Ok(result);
         }
+
     }
 }

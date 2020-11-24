@@ -36,7 +36,7 @@ namespace GDStore.Application.Users
                 return new ApiErrorResult<string>("Email không tồn tại");
             }
 
-            var result = await _signInManager.PasswordSignInAsync(request.Email, request.Password, false, true);
+            var result = await _signInManager.PasswordSignInAsync(user, request.Password, false, true);
             if (!result.Succeeded)
             {
                 return new ApiErrorResult<string>("Mật khẩu không chính xác");

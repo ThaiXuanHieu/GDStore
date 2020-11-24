@@ -4,14 +4,16 @@ using GDStore.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GDStore.Infrastructure.Migrations
 {
     [DbContext(typeof(GDStoreDbContext))]
-    partial class GDStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201124071917_AddData")]
+    partial class AddData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +49,7 @@ namespace GDStore.Infrastructure.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "d9dad063-b798-47fe-9a3d-512cacabebe5",
+                            ConcurrencyStamp = "2b6655dc-8c63-4521-abf5-7de9aff2756e",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -121,15 +123,15 @@ namespace GDStore.Infrastructure.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d53616fa-135c-4147-9068-4e65dfe56ef3",
-                            Email = "likeafternoonqp@gmail.com",
+                            ConcurrencyStamp = "8bf1b765-63ac-467d-8fa4-ca0ee26a3cf9",
+                            Email = "tedu.international@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Hieu",
                             LastName = "Thai Xuan",
                             LockoutEnabled = false,
-                            NormalizedEmail = "likeafternoonqp@gmail.com",
+                            NormalizedEmail = "tedu.international@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDQK9aXGF9F3kUDfEEODBkFzuLwom36NpF4OQEDxBOCJfZp5NSTqDCEloaO4hKsqlA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDO7GmCSx7FWbQojU32Rci2dq1HmOJJ8IqDlzQy5G//gDgAYn99IZ0Tw281rvc59zg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

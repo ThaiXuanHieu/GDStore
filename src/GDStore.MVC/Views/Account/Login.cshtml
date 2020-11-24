@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success">Đăng nhập</button>
                             </div>
-                            <div asp-validation-summary="All" class="text-danger"></div>
+                            @Html.ValidationMessage("Error", new { @class="text-center text-danger"})
                             <hr>
                             <div class="external-login d-flex flex-column">
                                 <button class="btn btn-primary mb-2">

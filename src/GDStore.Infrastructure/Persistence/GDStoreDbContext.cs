@@ -1,4 +1,5 @@
 ﻿using GDStore.Domain.Entities;
+using GDStore.Infrastructure.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +33,7 @@ namespace GDStore.Infrastructure.Persistence
             builder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
             builder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
             //base.OnModelCreating(builder);
+            builder.Seed();
         }
     }
 }

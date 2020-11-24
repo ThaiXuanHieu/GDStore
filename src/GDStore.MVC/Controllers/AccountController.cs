@@ -30,8 +30,8 @@ namespace GDStore.MVC.Controllers
             var result = await _userApiClient.Login(request);
             if (string.IsNullOrEmpty(result.ResultObj))
             {
-                ModelState.AddModelError("", result.Message);
-                return View();
+                ModelState.AddModelError("Error", "Đăng nhập thất bại");
+                return View("Login");
             }
 
             return RedirectToAction("Index", "Home");
