@@ -83,3 +83,4 @@ F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.csproj.CoreCompileInputs.cache
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.MvcApplicationPartsAssemblyInfo.cs
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.MvcApplicationPartsAssemblyInfo.cache
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Category\List.cshtml.g.cs

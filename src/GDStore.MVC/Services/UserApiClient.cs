@@ -1,4 +1,5 @@
-﻿using GDStore.Application.Models;
+﻿using GDStore.Application.Common;
+using GDStore.Application.Models;
 using GDStore.ViewModel.Users;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
@@ -24,7 +25,7 @@ namespace GDStore.MVC.Services
         {
             var json = JsonConvert.SerializeObject(request);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-            _client.BaseAddress = new Uri(_config["BaseAddress"]);
+            _client.BaseAddress = new Uri(_config[Constants.AppSettings.BaseAddress]);
             var response = await _client.PostAsync("/api/users/login", httpContent);
             if (response.IsSuccessStatusCode)
             {

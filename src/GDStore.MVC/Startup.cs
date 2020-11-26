@@ -23,6 +23,7 @@ namespace GDStore.MVC
         {
             services.AddHttpClient();
             services.AddHttpClient<IProductApiClient, ProductApiClient>();
+            services.AddHttpClient<ICategoryApiClient, CategoryApiClient>();
             services.AddHttpClient<IUserApiClient, UserApiClient>();
             services.AddControllersWithViews().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>());
             

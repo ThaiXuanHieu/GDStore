@@ -4,19 +4,29 @@ using System.Linq;
 using System.Threading.Tasks;
 using GDStore.MVC.Services;
 using GDStore.ViewModel.Products;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GDStore.MVC.Controllers
 {
     public class ProductController : Controller
     {
         private readonly IProductApiClient _productApiClient;
-        public ProductController(IProductApiClient productApiClient)
+        private readonly ICategoryApiClient _categoryApiClient;
+        public ProductController(IProductApiClient productApiClient, ICategoryApiClient categoryApiClient)
         {
             _productApiClient = productApiClient;
+            _categoryApiClient = categoryApiClient;
         }
-        public IActionResult List()
+        public async Task<IActionResult> List()
         {
+            var categories = await _categoryApiClient.GetAll();
+            ViewBag.Categories = categories.Select(x => new SelectListItem()
+            {
+                Text = x.Name,
+                Value = x.Id.ToString()
+            });
             return View();
         }
         public IActionResult Add()
@@ -26,15 +36,21 @@ namespace GDStore.MVC.Controllers
 
         [HttpPost]
         [Consumes("multipart/form-data")]
-        public async Task<IActionResult> Add([FromForm] ProductCreateRequest request)
+        public async Task<IActionResult> AddHandle([FromForm] ProductCreateRequest request, List<IFormFile> files)
         {
-            if(!ModelState.IsValid)
+            if (files == null || files.Count == 0)
             {
-                return View(request);
+                TempData["message"] = "Ảnh chưa được chọn";
+                return View("Add");
+            }
+            if (!ModelState.IsValid)
+            {
+                return View("Add", request);
             }
 
             try
             {
+                request.ThumbnailImage = files;
                 await _productApiClient.Add(request);
                 TempData["message"] = "Thêm sản phẩm thành công";
                 return RedirectToAction("List");
