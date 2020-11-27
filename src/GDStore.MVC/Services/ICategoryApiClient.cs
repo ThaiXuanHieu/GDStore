@@ -9,5 +9,8 @@ namespace GDStore.MVC.Services
     public interface ICategoryApiClient
     {
         Task<IEnumerable<CategoryVm>> GetAll();
+        Task<CategoryVm> Get(int id);
+        Task<bool> Add(CategoryCreateRequest request);
+        Task<bool> Update(CategoryUpdateRequest request);
     }
 }

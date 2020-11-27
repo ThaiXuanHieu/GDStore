@@ -2,7 +2,7 @@
 
 namespace GDStore.ViewModel.Products
 {
-    public class ProductRequestValidator : AbstractValidator<ProductCreateRequest>
+    public class ProductRequestValidator : AbstractValidator<ProductUpdateRequest>
     {
         public ProductRequestValidator()
         {
