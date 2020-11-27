@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GDStore.Application", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GDStore.Infrastructure", "src\GDStore.Infrastructure\GDStore.Infrastructure.csproj", "{EF7A7EDA-AB00-40CC-AC4D-D78203A73378}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GDStore.ViewModel", "src\GDStore.ViewModel\GDStore.ViewModel.csproj", "{DF358D5A-38B9-47CD-9540-15E67354768D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GDStore.ViewModel", "src\GDStore.ViewModel\GDStore.ViewModel.csproj", "{DF358D5A-38B9-47CD-9540-15E67354768D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
