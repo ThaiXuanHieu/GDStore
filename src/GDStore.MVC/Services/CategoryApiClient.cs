@@ -33,7 +33,7 @@ namespace GDStore.MVC.Services
             requestContent.Add(new StringContent(request.Name.ToString()), "name");
             requestContent.Add(new StringContent(request.Description.ToString()), "description");
 
-            var response = await _client.PostAsync($"/api/categories/", requestContent);
+            var response = await _client.PostAsync("/api/categories/", requestContent);
             return response.IsSuccessStatusCode;
         }
 
@@ -44,9 +44,20 @@ namespace GDStore.MVC.Services
 
         public async Task<bool> Update(CategoryUpdateRequest request)
         {
-            var json = JsonConvert.SerializeObject(request);
-            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await _client.PutAsync("/api/categories/"+request.Id, httpContent);
+            var requestContent = new MultipartFormDataContent();
+            requestContent.Add(new StringContent(request.Id.ToString()), "id");
+            requestContent.Add(new StringContent(request.Name.ToString()), "name");
+            requestContent.Add(new StringContent(request.Description.ToString()), "description");
+            requestContent.Add(new StringContent(request.CreatedDate.ToString()), "createdDate");
+            _client.BaseAddress = new Uri(_config[Constants.AppSettings.BaseAddress]);
+            var response = await _client.PutAsync("/api/categories/", requestContent);
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> Delete(int id)
+        {
+            _client.BaseAddress = new Uri(_config[Constants.AppSettings.BaseAddress]);
+            var response = await _client.DeleteAsync("/api/categories/"+id);
             return response.IsSuccessStatusCode;
         }
     }

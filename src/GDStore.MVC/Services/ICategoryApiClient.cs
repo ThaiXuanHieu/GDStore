@@ -12,5 +12,6 @@ namespace GDStore.MVC.Services
         Task<CategoryVm> Get(int id);
         Task<bool> Add(CategoryCreateRequest request);
         Task<bool> Update(CategoryUpdateRequest request);
+        Task<bool> Delete(int id);
     }
 }

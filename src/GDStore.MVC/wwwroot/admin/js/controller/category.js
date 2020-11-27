@@ -6,8 +6,6 @@
         $("#txtDescription").val("");
     });
 
-
-
     $("#frmAddUpdateCategory").validate({
         rules: {
             Name: {
@@ -54,6 +52,12 @@
                             window.location.href = "/Category/List";
                         });
                     }
+                    else {
+                        swal("Lỗi...", "", "error");
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
                 }
             });
 
@@ -90,6 +94,49 @@
     });
 
     $(".btn-delete").on("click", function () {
+        const categoryId = $(this).data("id");
+        swal({
+            title: "Xóa danh mục này?",
+            text: "",
+            type: "warning",
+            showCancelButton: true,
+            cancelButtonText: "Hủy bỏ",
+            confirmButtonClass: "btn-danger",
+            confirmButtonText: "Đồng ý",
+            closeOnConfirm: false,
+        }, function (isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    url: "/Category/Delete",
+                    data: {
+                        categoryId: categoryId
+                    },
+                    type: "GET",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status) {
+                            swal({
+                                title: "Thành công",
+                                type: "success",
+                                confirmButtonClass: "btn-primary",
+                                confirmButtonText: "OK",
+                                closeOnConfirm: false,
+                            }, function () {
+                                window.location.href = "/Category/List";
+                            });
+                        }
+                        else {
+                            swal("Lỗi...", "", "error");
+                        }
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
 
+            } else {
+                
+            }
+        });        
     });
 });

@@ -34,7 +34,7 @@ namespace GDStore.MVC.Controllers
                 var request = new CategoryCreateRequest();
                 request.Name = categoryVm.Name;
                 request.Description = categoryVm.Description;
-                request.UserId = Guid.Parse("69bd714f-9576-45ba-b5b7-f00649be00de");
+                request.UserId = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de");
                 request.CreatedDate = DateTime.Now;
 
                 status = await _categoryApiClient.Add(request);
@@ -67,6 +67,14 @@ namespace GDStore.MVC.Controllers
                 status = true;
             }
             return Json(new { data = data, status = status});
+        }
+
+        public async Task<IActionResult> Delete(int categoryId)
+        {
+            bool status = false;
+            status = await _categoryApiClient.Delete(categoryId);
+            
+            return Json(new { status = status });
         }
     }
 }
