@@ -44,5 +44,21 @@ namespace GDStore.MVC.Controllers
         {
             return View();
         }
+        public IActionResult ManagerAccount()
+        {
+            return View();
+        }
+        public IActionResult ManagerOrder()
+        {
+            return View();
+        }
+        public IActionResult AddressBook()
+        {
+            return View();
+        }
+        public IActionResult CreateAddressBook()
+        {
+            return View();
+        }
     }
 }

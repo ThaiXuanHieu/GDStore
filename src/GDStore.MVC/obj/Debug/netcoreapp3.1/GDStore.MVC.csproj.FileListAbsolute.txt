@@ -167,3 +167,8 @@ F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cs
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Product\Detail.cshtml.g.cs
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Category\Index.cshtml.g.cs
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Account\ManagerAccount.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Account\ManagerOrder.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Account\AddressBook.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Account\CreateAddressBook.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Cart\Index.cshtml.g.cs
