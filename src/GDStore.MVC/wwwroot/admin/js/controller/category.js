@@ -34,7 +34,7 @@
                 Description: description,
             }
             $.ajax({
-                url: "/Category/Save",
+                url: "/Admin/Category/Save",
                 data: {
                     strCategory: JSON.stringify(category)
                 },
@@ -49,7 +49,7 @@
                             confirmButtonText: "OK",
                             closeOnConfirm: false,
                         }, function () {
-                            window.location.href = "/Category/List";
+                            window.location.href = "/Admin/Category/List";
                         });
                     }
                     else {
@@ -71,7 +71,7 @@
         $("#modalAddUpdateCategory").modal("show");
 
         $.ajax({
-            url: "/Category/Get",
+            url: "/Admin/Category/Get",
             data: {
                 categoryId: categoryId
             },
@@ -107,7 +107,7 @@
         }, function (isConfirm) {
             if (isConfirm) {
                 $.ajax({
-                    url: "/Category/Delete",
+                    url: "/Admin/Category/Delete",
                     data: {
                         categoryId: categoryId
                     },
@@ -122,7 +122,7 @@
                                 confirmButtonText: "OK",
                                 closeOnConfirm: false,
                             }, function () {
-                                window.location.href = "/Category/List";
+                                window.location.href = "/Admin/Category/List";
                             });
                         }
                         else {

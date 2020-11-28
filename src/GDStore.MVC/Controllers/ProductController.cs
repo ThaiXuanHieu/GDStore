@@ -19,47 +19,11 @@ namespace GDStore.MVC.Controllers
             _productApiClient = productApiClient;
             _categoryApiClient = categoryApiClient;
         }
-        public async Task<IActionResult> List()
-        {
-            var categories = await _categoryApiClient.GetAll();
-            ViewBag.Categories = categories.Select(x => new SelectListItem()
-            {
-                Text = x.Name,
-                Value = x.Id.ToString()
-            });
-            return View();
-        }
-        public IActionResult Add()
+
+        public IActionResult Detail()
         {
             return View();
         }
-
-        [HttpPost]
-        [Consumes("multipart/form-data")]
-        public async Task<IActionResult> AddHandle([FromForm] ProductCreateRequest request, List<IFormFile> files)
-        {
-            if (files == null || files.Count == 0)
-            {
-                TempData["message"] = "Ảnh chưa được chọn";
-                return View("Add");
-            }
-            if (!ModelState.IsValid)
-            {
-                return View("Add", request);
-            }
-
-            try
-            {
-                request.ThumbnailImage = files;
-                await _productApiClient.Add(request);
-                TempData["message"] = "Thêm sản phẩm thành công";
-                return RedirectToAction("List");
-            }
-            catch (Exception)
-            {
-                return View(request);
-            }
-
-        }
+        
     }
 }

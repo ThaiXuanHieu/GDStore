@@ -425,5 +425,9 @@ body {
 }
 
 .address-info span {
-    color: rgb(120, 120, 120);;
+    color: rgb(120, 120, 120);
+}
+
+.btn, .card, .form-control, .badge {
+    border-radius: 0;
 }

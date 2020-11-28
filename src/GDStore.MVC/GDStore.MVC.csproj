@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="wwwroot\admin\img\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\admin\js\controller\category.js" />
   </ItemGroup>
 
   <ItemGroup>

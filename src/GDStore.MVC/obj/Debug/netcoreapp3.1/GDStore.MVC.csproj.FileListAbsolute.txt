@@ -17,7 +17,6 @@ F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.RazorAssembly
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.TagHelpers.input.cache
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.TagHelpers.output.cache
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.RazorCoreGenerate.cache
-F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -32,7 +31,6 @@ F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.dll
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.pdb
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.genruntimeconfig.cache
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.csproj.CopyComplete
-F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Product\List.cshtml.g.cs
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\FluentValidation.dll
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
@@ -65,8 +63,6 @@ F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.Domain.dll
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.ViewModel.dll
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.ViewModel.pdb
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.Domain.pdb
-F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Product\Add.cshtml.g.cs
-F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Product\Edit.cshtml.g.cs
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\System.Net.Http.Json.dll
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
@@ -80,7 +76,6 @@ F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\System.IdentityModel.Toke
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.Application.dll
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.Application.pdb
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Category\List.cshtml.g.cs
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
@@ -160,3 +155,15 @@ F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\Nancy.dll
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.csproj.CoreCompileInputs.cache
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.MvcApplicationPartsAssemblyInfo.cs
 F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\GDStore.MVC.MvcApplicationPartsAssemblyInfo.cache
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\List.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Add.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Edit.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\List.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Product\Detail.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Category\Index.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs

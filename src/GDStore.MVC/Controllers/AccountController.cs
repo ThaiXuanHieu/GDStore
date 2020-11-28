@@ -34,7 +34,7 @@ namespace GDStore.MVC.Controllers
                 return View("Login");
             }
 
-            return RedirectToAction("Index", "Home");
+            return Redirect("/Admin/Home/Index");
         }
         public IActionResult Register()
         {

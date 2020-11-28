@@ -4,11 +4,12 @@
 @model GDStore.ViewModel.Products.ProductUpdateRequest
 @{
     ViewData["Title"] = "Thêm sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 <h1 class="title-content">Thêm sản phẩm</h1>
 <div class="mt-5">
-    <form asp-action="AddHandle" asp-controller="Product" method="post" enctype="multipart/form-data">
+    <form asp-action="AddHandle" asp-controller="Product" asp-area="Admin" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label for="">Tên sản phẩm</label>
             <input type="text" asp-for="Name" class="form-control">
