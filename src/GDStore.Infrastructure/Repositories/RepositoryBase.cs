@@ -20,6 +20,11 @@ namespace GDStore.Infrastructure.Repositories
         {
             await _context.Set<TEntity>().AddAsync(entity);
         }
+        public async Task<TEntity> AddEntity(TEntity entity)
+        {
+            await _context.Set<TEntity>().AddAsync(entity);
+            return entity;
+        }
 
         public async Task AddRangeAsync(IEnumerable<TEntity> entities)
         {
@@ -54,6 +59,12 @@ namespace GDStore.Infrastructure.Repositories
         public void Update(TEntity entity)
         {
             _context.Set<TEntity>().Update(entity);
+        }
+
+        public TEntity UpdateEntity(TEntity entity)
+        {
+            _context.Set<TEntity>().Update(entity);
+            return entity;
         }
     }
 }

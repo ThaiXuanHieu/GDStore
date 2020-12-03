@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GDStore.MVC.Services;
-using GDStore.ViewModel.Products;
-using Microsoft.AspNetCore.Http;
+﻿using GDStore.MVC.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GDStore.MVC.Controllers
 {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using GDStore.MVC.Services;
 using GDStore.ViewModel.Users;
 using Microsoft.AspNetCore.Mvc;

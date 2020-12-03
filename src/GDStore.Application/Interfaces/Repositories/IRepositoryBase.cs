@@ -18,9 +18,13 @@ namespace GDStore.Application.Interfaces.Repositories
 
         Task Add(TEntity entity);
 
+        Task<TEntity> AddEntity(TEntity entity);
+
         Task AddRangeAsync(IEnumerable<TEntity> entities);
 
         void Update(TEntity entity);
+
+        TEntity UpdateEntity(TEntity entity);
 
         void Remove(TEntity entity);
     }

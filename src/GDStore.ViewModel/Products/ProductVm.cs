@@ -14,6 +14,6 @@ namespace GDStore.ViewModel.Products
         public string Description { get; set; }
         public DateTime? CreatedDate { get; set; }
         public int Rating { get; set; }
-        public List<string> ThumbnailImage { get; set; }
+        public IEnumerable<ProductImage> ThumbnailImage { get; set; }
     }
 }

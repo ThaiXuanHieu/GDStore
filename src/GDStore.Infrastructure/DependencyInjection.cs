@@ -29,6 +29,7 @@ namespace GDStore.Infrastructure
             services.AddTransient(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             services.AddTransient<IBrandRepository, BrandRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IProductImageRepository, ProductImageRepository>();
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             return services;

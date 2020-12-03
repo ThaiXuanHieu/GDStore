@@ -12,10 +12,11 @@ namespace GDStore.Infrastructure
         private IBrandRepository _brandRepository;
         private ICategoryRepository _categoryRepository;
         private IProductRepository _productRepository;
+        private IProductImageRepository _productImageRepository;
         public IBrandRepository Brands => _brandRepository ?? (_brandRepository = new BrandRepository(_context));
         public ICategoryRepository Categories => _categoryRepository ?? (_categoryRepository = new CategoryRepository(_context));
         public IProductRepository Products => _productRepository ?? (_productRepository = new ProductRepository(_context));
-
+        public IProductImageRepository ProductImages => _productImageRepository ?? (_productImageRepository = new ProductImageRepository(_context));
         public UnitOfWork(GDStoreDbContext context)
         {
             _context = context;

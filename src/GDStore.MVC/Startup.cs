@@ -25,6 +25,7 @@ namespace GDStore.MVC
             services.AddHttpClient<IProductApiClient, ProductApiClient>();
             services.AddHttpClient<ICategoryApiClient, CategoryApiClient>();
             services.AddHttpClient<IUserApiClient, UserApiClient>();
+            services.AddHttpClient<IBrandApiClient, BrandApiClient>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddControllersWithViews().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>());
 

@@ -1,5 +1,6 @@
 ﻿using GDStore.Application.Exceptions;
 using GDStore.Application.Interfaces;
+using GDStore.Application.ProductImages;
 using GDStore.Domain.Entities;
 using GDStore.ViewModel.Products;
 using Microsoft.AspNetCore.Http;
@@ -17,40 +18,40 @@ namespace GDStore.Application.Products
     {
         private readonly IStorageService _storageService;
         private readonly IUnitOfWork _unitOfWork;
-        public ProductService(IStorageService storageService, IUnitOfWork unitOfWork)
+        private readonly IProductImageService _productImageService;
+        public ProductService(IStorageService storageService, IUnitOfWork unitOfWork, IProductImageService productImageService)
         {
             _storageService = storageService;
             _unitOfWork = unitOfWork;
+            _productImageService = productImageService;
         }
         public async Task Add(ProductCreateRequest request)
         {
-            var product = new Product();
-            product.Name = request.Name;
-            product.Price = request.Price;
-            product.OriginalPrice = request.OriginalPrice;
-            product.Description = request.Description;
-            product.BrandId = request.BrandId;
-            product.CreatedDate = DateTime.Now;
-
-            if (request.ThumbnailImage.Count == 0)
+            var productNew = new Product();
+            productNew.Name = request.Name;
+            productNew.Price = request.Price;
+            productNew.OriginalPrice = request.OriginalPrice;
+            productNew.Description = request.Description;
+            productNew.BrandId = request.BrandId;
+            productNew.CreatedDate = DateTime.Now;
+            var product = await _unitOfWork.Products.AddEntity(productNew);
+            await _unitOfWork.SaveChangeAsync();
+            if (request.ThumbnailImage.Count != 0)
             {
-                var productImages = new List<ProductImage>();
                 foreach (var i in request.ThumbnailImage)
                 {
-                    productImages.Add(
+                    await _productImageService.Add(
                         new ProductImage()
                         {
                             Description = "Thumbnai Image",
                             CreatedDate = DateTime.Now,
-                            Url = await this.SaveFile(i),
-                            IsDefault = true
+                            IsDefault = true,
+                            ProductId = product.Id,
+                            Url = await this.SaveFile(i)
                         }
                     );
                 }
             }
-
-            await _unitOfWork.Products.Add(product);
-            await _unitOfWork.SaveChangeAsync();
         }
 
         public async Task Delete(int id)
@@ -72,6 +73,7 @@ namespace GDStore.Application.Products
             {
                 throw new NotFoundException(nameof(Product), id);
             }
+            var productImages = await _productImageService.GetByProductId(product.Id);
             var productVm = new ProductVm
             {
                 Id = product.Id,
@@ -81,7 +83,7 @@ namespace GDStore.Application.Products
                 Description = product.Description,
                 CreatedDate = product.CreatedDate,
                 Rating = product.Rating,
-                ThumbnailImage = product.ProductImages.Where(x => x.ProductId == product.Id).Select(x => x.Url).ToList(),
+                ThumbnailImage = productImages,
             };
 
             return productVm;
@@ -89,25 +91,28 @@ namespace GDStore.Application.Products
         public async Task<IEnumerable<ProductVm>> GetProducts()
         {
             var products = await _unitOfWork.Products.GetAllAsync();
-            var productVm = products.Select(c => new ProductVm
+            var listProductVm = new List<ProductVm>();
+            foreach(var item in products)
             {
-                Id = c.Id,
-                Name = c.Name,
-                OriginalPrice = c.OriginalPrice,
-                Price = c.Price,
-                Description = c.Description,
-                CreatedDate = c.CreatedDate,
-                Rating = c.Rating,
-                ThumbnailImage = c.ProductImages.Where(x => x.ProductId == c.Id).Select(x => x.Url).ToList(),
-            });
+                var productVmItem = new ProductVm();
+                productVmItem.Id = item.Id;
+                productVmItem.Name = item.Name;
+                productVmItem.OriginalPrice = item.OriginalPrice;
+                productVmItem.Price = item.Price;
+                productVmItem.Description = item.Description;
+                productVmItem.CreatedDate = item.CreatedDate;
+                productVmItem.Rating = item.Rating;
+                productVmItem.ThumbnailImage = await _productImageService.GetByProductId(item.Id);
+                listProductVm.Add(productVmItem);
+            }
 
-            return productVm;
+            return listProductVm;
         }
 
         public async Task Update(ProductUpdateRequest request)
         {
             var product = await _unitOfWork.Products.FirstOrDefaultAsync(x => x.Id == request.Id);
-            if(product == null)
+            if (product == null)
             {
                 throw new NotFoundException(nameof(Product), request.Id);
             }
@@ -117,26 +122,27 @@ namespace GDStore.Application.Products
             product.Description = request.Description;
             product.BrandId = request.BrandId;
             product.CreatedDate = DateTime.Now;
-
-            if (request.ThumbnailImage.Count == 0)
+            var productUpdate = _unitOfWork.Products.UpdateEntity(product);
+            await _unitOfWork.SaveChangeAsync();
+            if (request.ThumbnailImage.Count != 0)
             {
-                var productImages = new List<ProductImage>();
+                var productImages = _productImageService.GetByProductId(productUpdate.Id);
                 foreach (var i in request.ThumbnailImage)
                 {
-                    productImages.Add(
+                    await _productImageService.Update(
                         new ProductImage()
                         {
                             Description = "Thumbnai Image",
                             CreatedDate = DateTime.Now,
                             Url = await this.SaveFile(i),
+                            ProductId = productUpdate.Id,
                             IsDefault = true
                         }
                     );
                 }
             }
 
-            _unitOfWork.Products.Update(product);
-            await _unitOfWork.SaveChangeAsync();
+
         }
         private async Task<string> SaveFile(IFormFile file)
         {

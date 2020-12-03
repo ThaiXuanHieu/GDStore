@@ -15,23 +15,34 @@ namespace GDStore.MVC.Areas.Admin.Controllers
     {
         private readonly IProductApiClient _productApiClient;
         private readonly ICategoryApiClient _categoryApiClient;
-        public ProductController(IProductApiClient productApiClient, ICategoryApiClient categoryApiClient)
+        private readonly IBrandApiClient _brandApiClient;
+        public ProductController(IProductApiClient productApiClient, ICategoryApiClient categoryApiClient,
+            IBrandApiClient brandApiClient)
         {
             _productApiClient = productApiClient;
             _categoryApiClient = categoryApiClient;
+            _brandApiClient = brandApiClient;
         }
         public async Task<IActionResult> List()
         {
+            var products = await _productApiClient.GetAll();
+            return View(products);
+        }
+        public async Task<IActionResult> Add()
+        {
+            var brands = await _brandApiClient.GetAll();
+            ViewBag.Brands = brands.Select(x => new SelectListItem()
+            {
+                Text = x.Name,
+                Value = x.Id.ToString()
+            });
             var categories = await _categoryApiClient.GetAll();
             ViewBag.Categories = categories.Select(x => new SelectListItem()
             {
                 Text = x.Name,
                 Value = x.Id.ToString()
             });
-            return View();
-        }
-        public IActionResult Add()
-        {
+            
             return View();
         }
 

@@ -1,6 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model IEnumerable<GDStore.ViewModel.Products.ProductVm>
 @{
     ViewData["Title"] = "Danh sách sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -37,56 +38,60 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><input type="checkbox" name="" id=""></td>
-                <td>1</td>
-                <td>Giày Thể Thao Nam Biti's Hunter X Matcha DSMH03400XMN (Xanh Mi Nơ)</td>
-                <td>590.000₫</td>
-                <td>
-                    <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                    <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" name="" id=""></td>
-                <td>2</td>
-                <td>Giày Thể Thao Nam Biti's Hunter Street DSMH04300XNH (Xanh Nhớt)</td>
-                <td>690.000₫</td>
-                <td>
-                    <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                    <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" name="" id=""></td>
-                <td>3</td>
-                <td>Sandal Nam Biti's Hunter DEMH00600XAM (Xám)</td>
-                <td>300.000₫</td>
-                <td>
-                    <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                    <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" name="" id=""></td>
-                <td>4</td>
-                <td>Dentsu Redder - Hương Giang - Vietnamese Canvas of Pride (Women)</td>
-                <td>650.000₫</td>
-                <td>
-                    <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                    <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" name="" id=""></td>
-                <td>5</td>
-                <td>Giày Thể Thao Nữ Biti's Hunter X BKL - Midnight Black Inverted DSWH02302DEN (Đen)</td>
-                <td>790.000₫</td>
-                <td>
-                    <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                    <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
-                </td>
-            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>
+                        <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                        <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            }
+
+            @*<tr>
+            <td><input type="checkbox" name="" id=""></td>
+            <td>2</td>
+            <td>Giày Thể Thao Nam Biti's Hunter Street DSMH04300XNH (Xanh Nhớt)</td>
+            <td>690.000₫</td>
+            <td>
+                <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id=""></td>
+            <td>3</td>
+            <td>Sandal Nam Biti's Hunter DEMH00600XAM (Xám)</td>
+            <td>300.000₫</td>
+            <td>
+                <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id=""></td>
+            <td>4</td>
+            <td>Dentsu Redder - Hương Giang - Vietnamese Canvas of Pride (Women)</td>
+            <td>650.000₫</td>
+            <td>
+                <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id=""></td>
+            <td>5</td>
+            <td>Giày Thể Thao Nữ Biti's Hunter X BKL - Midnight Black Inverted DSWH02302DEN (Đen)</td>
+            <td>790.000₫</td>
+            <td>
+                <a href="" class="btn btn-warning"><i class="fas fa-edit"></i></a>
+                <a href="" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+            </td>
+        </tr>*@
         </tbody>
     </table>
 </div>

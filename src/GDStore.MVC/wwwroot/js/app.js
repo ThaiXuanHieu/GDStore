@@ -45,7 +45,7 @@ btnAddToCart.forEach(e => e.addEventListener("click", function() {
     closeOnConfirm: false,
   },
   function(){
-    window.location.href = "cart.html";
+    window.location.href = "/Cart/Index";
   });
 }));
 // /

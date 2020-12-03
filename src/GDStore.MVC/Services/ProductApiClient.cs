@@ -1,12 +1,14 @@
 ﻿using GDStore.Application.Common;
 using GDStore.ViewModel.Products;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace GDStore.MVC.Services
@@ -27,15 +29,19 @@ namespace GDStore.MVC.Services
             if (request.ThumbnailImage != null)
             {
                 byte[] data;
+                List<ByteArrayContent> bytes = new List<ByteArrayContent>();
                 foreach (var item in request.ThumbnailImage)
                 {
                     using (var br = new BinaryReader(item.OpenReadStream()))
                     {
                         data = br.ReadBytes((int)item.OpenReadStream().Length);
-                        ByteArrayContent bytes = new ByteArrayContent(data);
-                        requestContent.Add(bytes, "thumbnailImage", item.FileName);
+                        bytes.Add( new ByteArrayContent(data));
+                        
                     }
                 }
+                var json = JsonConvert.SerializeObject(bytes);
+                var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+                requestContent.Add(httpContent, "thumbnailImage");
             }
 
             requestContent.Add(new StringContent(request.Price.ToString()), "price");
@@ -51,6 +57,7 @@ namespace GDStore.MVC.Services
 
         public async Task<IEnumerable<ProductVm>> GetAll()
         {
+            _client.BaseAddress = new Uri(_config[Constants.AppSettings.BaseAddress]);
             return await GetListAsync<ProductVm>("/api/products");
         }
     }
