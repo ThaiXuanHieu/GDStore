@@ -1,5 +1,8 @@
-﻿using GDStore.MVC.Services;
+﻿using GDStore.Application.Common;
+using GDStore.MVC.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using System.Threading.Tasks;
 
 namespace GDStore.MVC.Controllers
 {
@@ -7,15 +10,20 @@ namespace GDStore.MVC.Controllers
     {
         private readonly IProductApiClient _productApiClient;
         private readonly ICategoryApiClient _categoryApiClient;
-        public ProductController(IProductApiClient productApiClient, ICategoryApiClient categoryApiClient)
+        private readonly IConfiguration _config;
+        public ProductController(IProductApiClient productApiClient, ICategoryApiClient categoryApiClient,
+            IConfiguration config)
         {
             _productApiClient = productApiClient;
             _categoryApiClient = categoryApiClient;
+            _config = config;
         }
 
-        public IActionResult Detail()
+        public async Task<IActionResult> Detail(int id)
         {
-            return View();
+            ViewData["BackendUrl"] = _config[Constants.AppSettings.BaseAddress];
+            var product = await _productApiClient.GetById(id);
+            return View(product);
         }
         
     }

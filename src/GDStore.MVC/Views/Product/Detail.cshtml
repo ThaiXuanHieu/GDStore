@@ -3,14 +3,14 @@
     ViewData["Title"] = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@model GDStore.ViewModel.Products.ProductVm
 <div class="breadcrumb-rg">
     <div class="container p-0">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Trang chủ</a></li>
                 <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Tên sản phẩm</li>
+                <li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
             </ol>
         </nav>
     </div>
@@ -20,29 +20,34 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="img-default p-4">
-                    <img src="~/img/product/male/product-2.webp" class="w-100 img-default-product" alt="">
+                    <img src="@ViewData["BackendUrl"]/user-content/@Model.ThumbnailImage.First().Url" class="w-100 img-default-product" alt="">
                 </div>
                 <div class="list-img d-flex justify-content-center">
+
                     <div class="img-item">
-                        <img src="~/img/product/male/product-2_1.webp" alt="" class="is-clicked">
+                        <img src="@ViewData["BackendUrl"]/user-content/@Model.ThumbnailImage.First().Url" alt="" class="is-clicked">
                     </div>
-                    <div class="img-item">
-                        <img src="~/img/product/male/product-2_2.webp" alt="">
-                    </div>
-                    <div class="img-item">
-                        <img src="~/img/product/male/product-2_3.webp" alt="">
-                    </div>
-                    <div class="img-item">
-                        <img src="~/img/product/male/product-2_4.jpg" alt="">
-                    </div>
+                    @foreach (var item in Model.ThumbnailImage.Skip(1))
+                    {
+                        <div class="img-item">
+                            <img src="@ViewData["BackendUrl"]/user-content/@item.Url" alt="">
+                        </div>
+                    }
+                    @*
+                        <div class="img-item">
+                            <img src="~/img/product/male/product-2_3.webp" alt="">
+                        </div>
+                        <div class="img-item">
+                            <img src="~/img/product/male/product-2_4.jpg" alt="">
+                        </div>*@
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="info-product pt-4">
-                    <h1 class="product-name">Giày Thể Thao Nam Biti's Hunter X Matcha DSMH03400XMN (Xanh Mi Nơ)</h1>
+                    <h1 class="product-name">@Model.Name</h1>
                     <div class="rg-price">
-                        <span class="price"><strong>790.000₫</strong></span>
-                        <del class="original-price ml-4">990.000₫</del>
+                        <span class="price"><strong>@Model.Price</strong></span>
+                        <del class="original-price ml-4">@Model.OriginalPrice</del>
                         <label class="badge badge-warning ml-4">-50%</label>
                     </div>
                     <div class="rate">
