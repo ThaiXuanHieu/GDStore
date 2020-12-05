@@ -44,12 +44,13 @@ namespace GDStore.MVC.Services
 
         public async Task<bool> Update(CategoryUpdateRequest request)
         {
+            _client.BaseAddress = new Uri(_config[Constants.AppSettings.BaseAddress]);
             var requestContent = new MultipartFormDataContent();
             requestContent.Add(new StringContent(request.Id.ToString()), "id");
             requestContent.Add(new StringContent(request.Name.ToString()), "name");
             requestContent.Add(new StringContent(request.Description.ToString()), "description");
             requestContent.Add(new StringContent(request.CreatedDate.ToString()), "createdDate");
-            _client.BaseAddress = new Uri(_config[Constants.AppSettings.BaseAddress]);
+            
             var response = await _client.PutAsync("/api/categories/", requestContent);
             return response.IsSuccessStatusCode;
         }

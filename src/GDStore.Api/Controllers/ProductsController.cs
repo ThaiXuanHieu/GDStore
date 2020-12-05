@@ -33,7 +33,8 @@ namespace GDStore.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct([FromForm]ProductCreateRequest request)
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> AddProduct([FromForm] ProductCreateRequest request)
         {
             if (!ModelState.IsValid)
             {

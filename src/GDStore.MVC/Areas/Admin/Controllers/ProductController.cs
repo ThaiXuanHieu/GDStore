@@ -62,18 +62,25 @@ namespace GDStore.MVC.Areas.Admin.Controllers
             }
             if (!ModelState.IsValid)
             {
+                TempData["message"] = "Thêm sản phẩm thất bại";
                 return View("Add", request);
             }
 
             try
             {
                 request.ThumbnailImage = files;
-                await _productApiClient.Add(request);
-                TempData["message"] = "Thêm sản phẩm thành công";
+                var result = await _productApiClient.Add(request);
+                if (result)
+                {
+                    TempData["message"] = "Thêm sản phẩm thành công";
+                    return RedirectToAction("List");
+                }
+                TempData["message"] = "Thêm sản phẩm thất bại";
                 return RedirectToAction("List");
             }
             catch (Exception)
             {
+                TempData["message"] = "Thêm sản phẩm thất bại";
                 return View("Add", request);
             }
 
