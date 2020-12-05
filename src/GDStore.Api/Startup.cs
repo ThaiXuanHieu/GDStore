@@ -62,6 +62,7 @@ namespace GDStore.Api
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseStaticFiles();
 
             app.UseSwagger();
 

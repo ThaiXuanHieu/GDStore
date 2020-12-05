@@ -24,6 +24,15 @@ namespace GDStore.Application.ProductImages
             _unitOfWork.ProductImages.Update(productImage);
             await _unitOfWork.SaveChangeAsync();
         }
+        public async Task Delete(int productId)
+        {
+            var productImages = await _unitOfWork.ProductImages.FindAsync(x => x.ProductId == productId);
+            foreach(var item in productImages)
+            {
+                _unitOfWork.ProductImages.Remove(item);
+            }
+            await _unitOfWork.SaveChangeAsync();
+        }
 
         public async Task<IEnumerable<ProductImage>> GetByProductId(int productId)
         {

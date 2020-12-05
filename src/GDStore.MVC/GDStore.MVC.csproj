@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GDStore.Api\GDStore.Api.csproj" />
     <ProjectReference Include="..\GDStore.Application\GDStore.Application.csproj" />
     <ProjectReference Include="..\GDStore.ViewModel\GDStore.ViewModel.csproj" />
   </ItemGroup>

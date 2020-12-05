@@ -9,6 +9,9 @@ namespace GDStore.MVC.Services
     public interface IProductApiClient
     {
         Task<IEnumerable<ProductVm>> GetAll();
+        Task<ProductVm> GetById(int id);
         Task<bool> Add(ProductCreateRequest request);
+        Task<bool> Delete(int id);
+
     }
 }

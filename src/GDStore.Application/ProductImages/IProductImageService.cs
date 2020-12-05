@@ -10,6 +10,7 @@ namespace GDStore.Application.ProductImages
     {
         Task Add(ProductImage productImage);
         Task Update(ProductImage productImage);
+        Task Delete(int productId);
         Task<ProductImage> GetById(int id);
         Task<IEnumerable<ProductImage>> GetByProductId(int productId);
     }

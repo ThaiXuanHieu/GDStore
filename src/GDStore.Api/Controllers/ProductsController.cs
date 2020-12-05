@@ -33,7 +33,7 @@ namespace GDStore.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct([FromForm] ProductCreateRequest request)
+        public async Task<IActionResult> AddProduct([FromForm]ProductCreateRequest request)
         {
             if (!ModelState.IsValid)
             {

@@ -126,10 +126,10 @@ namespace GDStore.Application.Products
             await _unitOfWork.SaveChangeAsync();
             if (request.ThumbnailImage.Count != 0)
             {
-                var productImages = _productImageService.GetByProductId(productUpdate.Id);
+                await _productImageService.Delete(request.Id);
                 foreach (var i in request.ThumbnailImage)
                 {
-                    await _productImageService.Update(
+                    await _productImageService.Add(
                         new ProductImage()
                         {
                             Description = "Thumbnai Image",
