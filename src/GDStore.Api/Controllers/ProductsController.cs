@@ -45,6 +45,7 @@ namespace GDStore.Api.Controllers
         }
 
         [HttpPut]
+        [Consumes("multipart/form-data")]
         public async Task<IActionResult> UpdateProduct([FromForm] ProductUpdateRequest request)
         {
             if (!ModelState.IsValid)

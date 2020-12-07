@@ -39,7 +39,6 @@ namespace GDStore.MVC.Services
                     ByteArrayContent bytes = new ByteArrayContent(data);
                     requestContent.Add(bytes, "thumbnailImage", item.FileName);
                 }
-                
             }
 
             requestContent.Add(new StringContent(request.Price.ToString()), "price");
@@ -47,9 +46,39 @@ namespace GDStore.MVC.Services
             requestContent.Add(new StringContent(request.Name.ToString()), "name");
             requestContent.Add(new StringContent(request.Description.ToString()), "description");
             requestContent.Add(new StringContent(request.BrandId.ToString()), "brandId");
-            requestContent.Add(new StringContent(request.CategoryIds.ToString()), "categoryIds");
+            requestContent.Add(new StringContent(request.CategoryIds.First().ToString()), "categoryIds");
 
             var response = await _client.PostAsync("/api/products/", requestContent);
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> Update(ProductUpdateRequest request)
+        {
+            _client.BaseAddress = new Uri(_config[Constants.AppSettings.BaseAddress]);
+            var requestContent = new MultipartFormDataContent();
+            if (request.ThumbnailImage != null)
+            {
+                byte[] data;
+                foreach (var item in request.ThumbnailImage)
+                {
+                    using (var br = new BinaryReader(item.OpenReadStream()))
+                    {
+                        data = br.ReadBytes((int)item.OpenReadStream().Length);
+
+                    }
+                    ByteArrayContent bytes = new ByteArrayContent(data);
+                    requestContent.Add(bytes, "thumbnailImage", item.FileName);
+                }
+            }
+
+            requestContent.Add(new StringContent(request.Price.ToString()), "price");
+            requestContent.Add(new StringContent(request.OriginalPrice.ToString()), "originalPrice");
+            requestContent.Add(new StringContent(request.Name.ToString()), "name");
+            requestContent.Add(new StringContent(request.Description.ToString()), "description");
+            requestContent.Add(new StringContent(request.BrandId.ToString()), "brandId");
+            requestContent.Add(new StringContent(request.CategoryIds.First().ToString()), "categoryIds");
+
+            var response = await _client.PutAsync("/api/products/", requestContent);
             return response.IsSuccessStatusCode;
         }
 
