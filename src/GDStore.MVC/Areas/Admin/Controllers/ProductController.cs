@@ -29,7 +29,7 @@ namespace GDStore.MVC.Areas.Admin.Controllers
         }
         public async Task<IActionResult> List()
         {
-            ViewData["BackendUrl"] = _config[Constants.AppSettings.BaseAddress];
+            TempData["BackendUrl"] = _config[Constants.AppSettings.BaseAddress];
             var products = await _productApiClient.GetAll();
             return View(products);
         }
@@ -88,8 +88,70 @@ namespace GDStore.MVC.Areas.Admin.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
+            TempData["BackendUrl"] = _config[Constants.AppSettings.BaseAddress];
             var product = await _productApiClient.GetById(id);
-            return View(product);
+            TempData["ProductImage"] = product.ThumbnailImage;
+            var brands = await _brandApiClient.GetAll();
+            ViewBag.Brands = brands.Select(x => new SelectListItem()
+            {
+                Text = x.Name,
+                Value = x.Id.ToString(),
+                
+            });
+            var categories = await _categoryApiClient.GetAll();
+            ViewBag.Categories = categories.Select(x => new SelectListItem()
+            {
+                Text = x.Name,
+                Value = x.Id.ToString(),
+                
+            });
+            var productUpdate = new ProductUpdateRequest();
+            productUpdate.Id = product.Id;
+            productUpdate.Name = product.Name;
+            productUpdate.OriginalPrice = product.OriginalPrice;
+            productUpdate.Price = product.Price;
+            productUpdate.Description = product.Description;
+            productUpdate.BrandId = product.BrandId;
+
+            return View(productUpdate);
+        }
+
+        [HttpPost]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> EditHandle([FromForm] ProductUpdateRequest request, List<IFormFile> files)
+        {
+            var product = await _productApiClient.GetById(request.Id);
+            TempData["ProductImage"] = product.ThumbnailImage;
+            TempData["BackendUrl"] = _config[Constants.AppSettings.BaseAddress];
+            if (files == null || files.Count == 0)
+            {
+                TempData["message"] = "Ảnh chưa được chọn";
+                return View("Edit");
+            }
+            if (!ModelState.IsValid)
+            {
+                TempData["message"] = "Thêm sản phẩm thất bại";
+                return View("Edit", request);
+            }
+
+            try
+            {
+                request.ThumbnailImage = files;
+                var result = await _productApiClient.Update(request);
+                if (result)
+                {
+                    TempData["message"] = "Thêm sản phẩm thành công";
+                    return RedirectToAction("List");
+                }
+                TempData["message"] = "Thêm sản phẩm thất bại";
+                return RedirectToAction("List");
+            }
+            catch (Exception)
+            {
+                TempData["message"] = "Thêm sản phẩm thất bại";
+                return View("Edit", request);
+            }
+
         }
 
         public async Task<IActionResult> Delete(int id)

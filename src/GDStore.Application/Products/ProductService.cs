@@ -1,5 +1,6 @@
 ﻿using GDStore.Application.Exceptions;
 using GDStore.Application.Interfaces;
+using GDStore.Application.ProductCategories;
 using GDStore.Application.ProductImages;
 using GDStore.Domain.Entities;
 using GDStore.ViewModel.Products;
@@ -19,11 +20,14 @@ namespace GDStore.Application.Products
         private readonly IStorageService _storageService;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IProductImageService _productImageService;
-        public ProductService(IStorageService storageService, IUnitOfWork unitOfWork, IProductImageService productImageService)
+        private readonly IProductCategoryService _productCategoryService;
+        public ProductService(IStorageService storageService, IUnitOfWork unitOfWork, IProductImageService productImageService,
+            IProductCategoryService productCategoryService)
         {
             _storageService = storageService;
             _unitOfWork = unitOfWork;
             _productImageService = productImageService;
+            _productCategoryService = productCategoryService;
         }
         public async Task Add(ProductCreateRequest request)
         {
@@ -36,6 +40,12 @@ namespace GDStore.Application.Products
             productNew.CreatedDate = DateTime.Now;
             var product = await _unitOfWork.Products.AddEntity(productNew);
             await _unitOfWork.SaveChangeAsync();
+
+            var productCategory = new ProductCategory();
+            productCategory.ProductId = product.Id;
+            productCategory.CategoryId = request.CategoryIds.First();
+            await _productCategoryService.Add(productCategory);
+
             if (request.ThumbnailImage.Count != 0)
             {
                 foreach (var i in request.ThumbnailImage)
@@ -69,6 +79,7 @@ namespace GDStore.Application.Products
         public async Task<ProductVm> GetById(int id)
         {
             var product = await _unitOfWork.Products.FirstOrDefaultAsync(c => c.Id == id);
+            var productCategory = await _productCategoryService.GetByProductId(product.Id);
             if (product == null)
             {
                 throw new NotFoundException(nameof(Product), id);
@@ -84,6 +95,8 @@ namespace GDStore.Application.Products
                 CreatedDate = product.CreatedDate,
                 Rating = product.Rating,
                 ThumbnailImage = productImages,
+                BrandId = product.BrandId,
+                CategoryId = productCategory.Select(x => x.CategoryId).ToList()
             };
 
             return productVm;
@@ -92,8 +105,9 @@ namespace GDStore.Application.Products
         {
             var products = await _unitOfWork.Products.GetAllAsync();
             var listProductVm = new List<ProductVm>();
-            foreach(var item in products)
+            foreach (var item in products)
             {
+                var productCategory = await _productCategoryService.GetByProductId(item.Id);
                 var productVmItem = new ProductVm();
                 productVmItem.Id = item.Id;
                 productVmItem.Name = item.Name;
@@ -102,6 +116,8 @@ namespace GDStore.Application.Products
                 productVmItem.Description = item.Description;
                 productVmItem.CreatedDate = item.CreatedDate;
                 productVmItem.Rating = item.Rating;
+                productVmItem.BrandId = item.BrandId;
+                productVmItem.CategoryId = productCategory.Select(x => x.CategoryId).ToList();
                 productVmItem.ThumbnailImage = await _productImageService.GetByProductId(item.Id);
                 listProductVm.Add(productVmItem);
             }
@@ -124,6 +140,7 @@ namespace GDStore.Application.Products
             product.CreatedDate = DateTime.Now;
             var productUpdate = _unitOfWork.Products.UpdateEntity(product);
             await _unitOfWork.SaveChangeAsync();
+            await _productCategoryService.Update(new ProductCategory() { ProductId = product.Id, CategoryId = request.CategoryIds.First() });
             if (request.ThumbnailImage.Count != 0)
             {
                 await _productImageService.Delete(request.Id);
@@ -141,8 +158,6 @@ namespace GDStore.Application.Products
                     );
                 }
             }
-
-
         }
         private async Task<string> SaveFile(IFormFile file)
         {

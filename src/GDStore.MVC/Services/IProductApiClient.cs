@@ -11,6 +11,7 @@ namespace GDStore.MVC.Services
         Task<IEnumerable<ProductVm>> GetAll();
         Task<ProductVm> GetById(int id);
         Task<bool> Add(ProductCreateRequest request);
+        Task<bool> Update(ProductUpdateRequest request);
         Task<bool> Delete(int id);
 
     }

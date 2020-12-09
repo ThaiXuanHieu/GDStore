@@ -6,7 +6,12 @@
     ViewData["Title"] = "Thêm sản phẩm";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
+@if (TempData["message"] != null)
+{
+    <script type="text/javascript">
+            swal("@Html.Raw(TempData["message"].ToString())", "", "success");
+    </script>
+}
 <h1 class="title-content">Thêm sản phẩm</h1>
 <div class="mt-5">
     <form asp-action="AddHandle" asp-controller="Product" asp-area="Admin" method="post" enctype="multipart/form-data">

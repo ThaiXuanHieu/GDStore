@@ -13,17 +13,21 @@ namespace GDStore.MVC.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductApiClient _productApiClient;
+        private readonly ICategoryApiClient _categoryApiClient;
         private readonly IConfiguration _config;
-        public HomeController(ILogger<HomeController> logger, IProductApiClient productApiClient, IConfiguration config)
+        public HomeController(ILogger<HomeController> logger, IProductApiClient productApiClient, IConfiguration config,
+            ICategoryApiClient categoryApiClient)
         {
             _logger = logger;
             _productApiClient = productApiClient;
             _config = config;
+            _categoryApiClient = categoryApiClient;
         }
 
         public async Task<IActionResult> Index()
         {
-            ViewData["BackendUrl"] = _config[Constants.AppSettings.BaseAddress];
+            TempData["BackendUrl"] = _config[Constants.AppSettings.BaseAddress];
+            ViewBag.Categories = await _categoryApiClient.GetAll();
             var products = await _productApiClient.GetAll();
             return View(products);
         }

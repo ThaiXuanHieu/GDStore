@@ -20,17 +20,17 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="img-default p-4">
-                    <img src="@ViewData["BackendUrl"]/user-content/@Model.ThumbnailImage.First().Url" class="w-100 img-default-product" alt="">
+                    <img src="@TempData["BackendUrl"]/user-content/@Model.ThumbnailImage.First().Url" class="w-100 img-default-product" alt="">
                 </div>
                 <div class="list-img d-flex justify-content-center">
 
                     <div class="img-item">
-                        <img src="@ViewData["BackendUrl"]/user-content/@Model.ThumbnailImage.First().Url" alt="" class="is-clicked">
+                        <img src="@TempData["BackendUrl"]/user-content/@Model.ThumbnailImage.First().Url" alt="" class="is-clicked">
                     </div>
                     @foreach (var item in Model.ThumbnailImage.Skip(1))
                     {
                         <div class="img-item">
-                            <img src="@ViewData["BackendUrl"]/user-content/@item.Url" alt="">
+                            <img src="@TempData["BackendUrl"]/user-content/@item.Url" alt="">
                         </div>
                     }
                     @*

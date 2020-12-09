@@ -49,7 +49,7 @@
             {
             <tr>
                 <td><input type="checkbox" name="" id=""></td>
-                <td><img src="@ViewData["BackendUrl"]/user-content/@item.ThumbnailImage.First().Url" style="width:50px"/></td>
+                <td><img src="@TempData["BackendUrl"]/user-content/@item.ThumbnailImage.First().Url" style="width:50px"/></td>
                 <td>@item.Name</td>
                 <td>@item.Price</td>
                 <td>

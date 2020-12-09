@@ -21,7 +21,7 @@ namespace GDStore.MVC.Controllers
 
         public async Task<IActionResult> Detail(int id)
         {
-            ViewData["BackendUrl"] = _config[Constants.AppSettings.BaseAddress];
+            TempData["BackendUrl"] = _config[Constants.AppSettings.BaseAddress];
             var product = await _productApiClient.GetById(id);
             return View(product);
         }

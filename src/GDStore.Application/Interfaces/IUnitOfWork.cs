@@ -10,6 +10,7 @@ namespace GDStore.Application.Interfaces
         ICategoryRepository Categories { get; }
         IProductRepository Products { get; }
         IProductImageRepository ProductImages { get; }
+        IProductCategoryRepository ProductCategories { get; }
         Task<int> SaveChangeAsync();
     }
 }
