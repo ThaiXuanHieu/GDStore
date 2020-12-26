@@ -89,6 +89,7 @@
 
 @section Scripts {
     <script type="text/javascript">
+
         $("#ChooseImg").on("change", function () {
             show(this);
         });
@@ -102,13 +103,18 @@
                     filerdr.onload = function (e) {
                         rgPreviewImg.append("<div class='wrapperImg text-center'>" +
                             "<img class='img-product' src='" + e.target.result + "' alt=''>" +
-                            "<i class='fas fa-trash-alt text-danger btn-deleteImg'></i>"
+                            "<i class='fas fa-trash-alt text-danger btn-deleteImg' onclick='deleteImg(this)'></i>"
                             + "</div>")
                     }
                     filerdr.readAsDataURL(input.files[i]);
                 }
             }
         }
+
+        function deleteImg(i) {
+            $(i).parent().remove();
+        }
+
     </script>
     <partial name="_ValidationScriptsPartial" />
 }

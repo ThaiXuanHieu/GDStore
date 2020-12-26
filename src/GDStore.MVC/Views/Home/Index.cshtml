@@ -1,4 +1,4 @@
-﻿
+﻿@using GDStore.Application.Common
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -49,11 +49,11 @@
                         <div class="product">
                             <label class="badge badge-warning">-50%</label><br>
                             <label class="badge badge-danger">Khuyến mãi</label>
-                            <a asp-action="Detail" asp-controller="Product" asp-route-id="@item.Id">
+                            <a href="/san-pham/@StringHelper.VNDecode(item.Name)-@item.Id">
                                 <img class="thumbnail-img" src="@TempData["BackendUrl"]/user-content/@item.ThumbnailImage.First().Url" alt="">
                             </a>
                             <hr>
-                            <h1 class="product-name"><a asp-action="Detail" asp-controller="Product" asp-route-id="@item.Id">@item.Name</a></h1>
+                            <h1 class="product-name"><a href="/san-pham/@StringHelper.VNDecode(item.Name)-@item.Id">@item.Name</a></h1>
                             <div>
                                 <span class="price"><strong>@item.Price₫</strong></span>
                                 <del class="original-price float-right">@item.OriginalPrice₫</del>
@@ -71,166 +71,27 @@
         </div>
     </section>
 }
-@*<section class="products products-female">
-        <div class="container">
-            <div class="title">Nữ</div>
-            <div class="row mt-2">
-                <div class="col-md-3 col-3">
-                    <div class="product">
-                        <label class="badge badge-warning">-50%</label><br>
-                        <label class="badge badge-danger">Khuyến mãi</label>
-                        <a href="/Product/Detail">
-                            <img class="thumbnail-img" src="~/img/product/female/product-1.webp" alt="">
-                        </a>
-                        <hr>
-                        <h1 class="product-name"><a href="/Product/Detail">Tên sản phẩm</a></h1>
-                        <div>
-                            <span class="price"><strong>790.000₫</strong></span>
-                            <del class="original-price float-right">990.000₫</del>
-                        </div>
-                        <button class="btn btn-success btn-addToCart w-100 mt-3">Thêm vào giỏ hàng</button>
-                    </div>
-                </div>
-                <div class="col-md-3 col-3">
-                    <div class="product">
-                        <label class="badge badge-warning">-50%</label><br>
-                        <label class="badge badge-danger">Khuyến mãi</label>
-                        <a href="/Product/Detail">
-                            <img class="thumbnail-img" src="~/img/product/female/product-2.webp" alt="">
-                        </a>
-                        <hr>
-                        <h1 class="product-name"><a href="/Product/Detail">Tên sản phẩm</a></h1>
-                        <div>
-                            <span class="price"><strong>790.000₫</strong></span>
-                            <del class="original-price float-right">990.000₫</del>
-                        </div>
-                        <button class="btn btn-success btn-addToCart w-100 mt-3">Thêm vào giỏ hàng</button>
-                    </div>
-                </div>
-                <div class="col-md-3 col-3">
-                    <div class="product">
-                        <label class="badge badge-warning">-50%</label><br>
-                        <label class="badge badge-danger">Khuyến mãi</label>
-                        <a href="/Product/Detail">
-                            <img class="thumbnail-img" src="~/img/product/female/product-3.webp" alt="">
-                        </a>
-                        <hr>
-                        <h1 class="product-name"><a href="/Product/Detail">Tên sản phẩm</a></h1>
-                        <div>
-                            <span class="price"><strong>790.000₫</strong></span>
-                            <del class="original-price float-right">990.000₫</del>
-                        </div>
-                        <button class="btn btn-success btn-addToCart w-100 mt-3">Thêm vào giỏ hàng</button>
-                    </div>
-                </div>
-                <div class="col-md-3 col-3">
-                    <div class="product">
-                        <label class="badge badge-warning">-50%</label><br>
-                        <label class="badge badge-danger">Khuyến mãi</label>
-                        <a href="/Product/Detail">
-                            <img class="thumbnail-img" src="~/img/product/female/product-4.webp" alt="">
-                        </a>
-                        <hr>
-                        <h1 class="product-name"><a href="/Product/Detail">Tên sản phẩm</a></h1>
-                        <div>
-                            <span class="price"><strong>790.000₫</strong></span>
-                            <del class="original-price float-right">990.000₫</del>
-                        </div>
-                        <button class="btn btn-success btn-addToCart w-100 mt-3">Thêm vào giỏ hàng</button>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-2">
-                <div class="col-md-3 col-3">
-                    <div class="product">
-                        <label class="badge badge-warning">-50%</label><br>
-                        <label class="badge badge-danger">Khuyến mãi</label>
-                        <a href="/Product/Detail">
-                            <img class="thumbnail-img" src="~/img/product/female/product-1.webp" alt="">
-                        </a>
-                        <hr>
-                        <h1 class="product-name"><a href="/Product/Detail">Tên sản phẩm</a></h1>
-                        <div>
-                            <span class="price"><strong>790.000₫</strong></span>
-                            <del class="original-price float-right">990.000₫</del>
-                        </div>
-                        <button class="btn btn-success btn-addToCart w-100 mt-3">Thêm vào giỏ hàng</button>
-                    </div>
-                </div>
-                <div class="col-md-3 col-3">
-                    <div class="product">
-                        <label class="badge badge-warning">-50%</label><br>
-                        <label class="badge badge-danger">Khuyến mãi</label>
-                        <a href="/Product/Detail">
-                            <img class="thumbnail-img" src="~/img/product/female/product-2.webp" alt="">
-                        </a>
-                        <hr>
-                        <h1 class="product-name"><a href="/Product/Detail">Tên sản phẩm</a></h1>
-                        <div>
-                            <span class="price"><strong>790.000₫</strong></span>
-                            <del class="original-price float-right">990.000₫</del>
-                        </div>
-                        <button class="btn btn-success btn-addToCart w-100 mt-3">Thêm vào giỏ hàng</button>
-                    </div>
-                </div>
-                <div class="col-md-3 col-3">
-                    <div class="product">
-                        <label class="badge badge-warning">-50%</label><br>
-                        <label class="badge badge-danger">Khuyến mãi</label>
-                        <a href="/Product/Detail">
-                            <img class="thumbnail-img" src="~/img/product/female/product-3.webp" alt="">
-                        </a>
-                        <hr>
-                        <h1 class="product-name"><a href="/Product/Detail">Tên sản phẩm</a></h1>
-                        <div>
-                            <span class="price"><strong>790.000₫</strong></span>
-                            <del class="original-price float-right">990.000₫</del>
-                        </div>
-                        <button class="btn btn-success btn-addToCart w-100 mt-3">Thêm vào giỏ hàng</button>
-                    </div>
-                </div>
-                <div class="col-md-3 col-3">
-                    <div class="product">
-                        <label class="badge badge-warning">-50%</label><br>
-                        <label class="badge badge-danger">Khuyến mãi</label>
-                        <a href="/Product/Detail">
-                            <img class="thumbnail-img" src="~/img/product/female/product-4.webp" alt="">
-                        </a>
-                        <hr>
-                        <h1 class="product-name"><a href="/Product/Detail">Tên sản phẩm</a></h1>
-                        <div>
-                            <span class="price"><strong>790.000₫</strong></span>
-                            <del class="original-price float-right">990.000₫</del>
-                        </div>
-                        <button class="btn btn-success btn-addToCart w-100 mt-3">Thêm vào giỏ hàng</button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-3">
-                <a href="" class="btn-see-more">Xem thêm</a>
-            </div>
-        </div>
-    </section>*@
+
 <section class="brands">
     <div class="container">
         <div class="title">Thương hiệu</div>
         <div class="row mt-2">
-            <div class="col-md-2 col-2">
+            <div class="col-md-3 col-3">
                 <div class="brand">
                     <a href=""><img src="/img/brand/adidas.png" class="w-100" alt=""></a>
                 </div>
             </div>
-            <div class="col-md-2 col-2">
+            <div class="col-md-3 col-3">
                 <div class="brand">
                     <a href=""><img src="/img/brand/nike.png" class="w-100" alt=""></a>
                 </div>
             </div>
-            <div class="col-md-2 col-2">
+            <div class="col-md-3 col-3">
                 <div class="brand">
                     <a href=""><img src="/img/brand/puma.png" class="w-100" alt=""></a>
                 </div>
             </div>
-            <div class="col-md-2 col-2">
+            <div class="col-md-3 col-3">
                 <div class="brand">
                     <a href=""><img src="/img/brand/bitis.png" class="w-100" alt=""></a>
                 </div>

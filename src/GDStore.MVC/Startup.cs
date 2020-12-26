@@ -1,6 +1,7 @@
 using FluentValidation.AspNetCore;
 using GDStore.MVC.Services;
 using GDStore.ViewModel;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +23,12 @@ namespace GDStore.MVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Account/Login";
+                    options.AccessDeniedPath = "/User/Forbidden/";
+                });
             services.AddHttpClient<IProductApiClient, ProductApiClient>();
             services.AddHttpClient<ICategoryApiClient, CategoryApiClient>();
             services.AddHttpClient<IUserApiClient, UserApiClient>();
@@ -47,6 +54,7 @@ namespace GDStore.MVC
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();

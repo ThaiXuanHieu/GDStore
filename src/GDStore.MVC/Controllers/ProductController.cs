@@ -19,6 +19,7 @@ namespace GDStore.MVC.Controllers
             _config = config;
         }
 
+        [Route("san-pham/{slug}-{id:int}")]
         public async Task<IActionResult> Detail(int id)
         {
             TempData["BackendUrl"] = _config[Constants.AppSettings.BaseAddress];

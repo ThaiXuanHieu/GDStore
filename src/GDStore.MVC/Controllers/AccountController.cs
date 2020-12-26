@@ -1,16 +1,27 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
 using GDStore.MVC.Services;
 using GDStore.ViewModel.Users;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 namespace GDStore.MVC.Controllers
 {
     public class AccountController : Controller
     {
         private readonly IUserApiClient _userApiClient;
-        public AccountController(IUserApiClient userApiClient)
+        private readonly IConfiguration _config;
+        public AccountController(IUserApiClient userApiClient, IConfiguration config)
         {
             _userApiClient = userApiClient;
+            _config = config;
         }
         public IActionResult Login()
         {
@@ -31,7 +42,40 @@ namespace GDStore.MVC.Controllers
                 return View("Login");
             }
 
-            return Redirect("/Admin/Home/Index");
+            var userPrincipal = this.ValidateToken(result.ResultObj);
+            var authProperties = new AuthenticationProperties
+            {
+                ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10),
+                IsPersistent = false
+            };
+
+            await HttpContext.SignInAsync(
+                        CookieAuthenticationDefaults.AuthenticationScheme,
+                        userPrincipal,
+                        authProperties);
+
+            return Redirect("/Home/Index");
+        }
+        private ClaimsPrincipal ValidateToken(string jwtToken)
+        {
+            IdentityModelEventSource.ShowPII = true;
+
+            SecurityToken validatedToken;
+            TokenValidationParameters validationParameters = new TokenValidationParameters();
+
+            validationParameters.ValidateLifetime = true;
+
+            validationParameters.ValidAudience = _config["Tokens:Issuer"];
+            validationParameters.ValidIssuer = _config["Tokens:Issuer"];
+            validationParameters.IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]));
+
+            ClaimsPrincipal principal = new JwtSecurityTokenHandler().ValidateToken(jwtToken, validationParameters, out validatedToken);
+
+            return principal;
+        }
+        public IActionResult Logout()
+        {
+            return View();
         }
         public IActionResult Register()
         {

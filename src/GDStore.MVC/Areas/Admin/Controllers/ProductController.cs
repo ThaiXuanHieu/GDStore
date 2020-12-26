@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using GDStore.Application.Common;
 using GDStore.MVC.Services;
 using GDStore.ViewModel.Products;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace GDStore.MVC.Areas.Admin.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class ProductController : Controller
     {
@@ -96,6 +98,7 @@ namespace GDStore.MVC.Areas.Admin.Controllers
             {
                 Text = x.Name,
                 Value = x.Id.ToString(),
+                Selected = product.BrandId == x.Id
                 
             });
             var categories = await _categoryApiClient.GetAll();
@@ -103,7 +106,7 @@ namespace GDStore.MVC.Areas.Admin.Controllers
             {
                 Text = x.Name,
                 Value = x.Id.ToString(),
-                
+                Selected = product.CategoryId.First() == x.Id
             });
             var productUpdate = new ProductUpdateRequest();
             productUpdate.Id = product.Id;
@@ -130,7 +133,7 @@ namespace GDStore.MVC.Areas.Admin.Controllers
             }
             if (!ModelState.IsValid)
             {
-                TempData["message"] = "Thêm sản phẩm thất bại";
+                TempData["message"] = "Cập nhật sản phẩm thất bại";
                 return View("Edit", request);
             }
 
@@ -140,15 +143,15 @@ namespace GDStore.MVC.Areas.Admin.Controllers
                 var result = await _productApiClient.Update(request);
                 if (result)
                 {
-                    TempData["message"] = "Thêm sản phẩm thành công";
+                    TempData["message"] = "Cập nhật sản phẩm thành công";
                     return RedirectToAction("List");
                 }
-                TempData["message"] = "Thêm sản phẩm thất bại";
+                TempData["message"] = "Cập nhật sản phẩm thất bại";
                 return RedirectToAction("List");
             }
             catch (Exception)
             {
-                TempData["message"] = "Thêm sản phẩm thất bại";
+                TempData["message"] = "Cập nhật sản phẩm thất bại";
                 return View("Edit", request);
             }
 

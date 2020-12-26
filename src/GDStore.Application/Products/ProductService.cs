@@ -41,9 +41,12 @@ namespace GDStore.Application.Products
             var product = await _unitOfWork.Products.AddEntity(productNew);
             await _unitOfWork.SaveChangeAsync();
 
-            var productCategory = new ProductCategory();
-            productCategory.ProductId = product.Id;
-            productCategory.CategoryId = request.CategoryIds.First();
+            var productCategory = new ProductCategory
+            {
+                ProductId = product.Id,
+                CategoryId = request.CategoryIds.First()
+            };
+
             await _productCategoryService.Add(productCategory);
 
             if (request.ThumbnailImage.Count != 0)
@@ -140,7 +143,12 @@ namespace GDStore.Application.Products
             product.CreatedDate = DateTime.Now;
             var productUpdate = _unitOfWork.Products.UpdateEntity(product);
             await _unitOfWork.SaveChangeAsync();
-            await _productCategoryService.Update(new ProductCategory() { ProductId = product.Id, CategoryId = request.CategoryIds.First() });
+            var productCategory = new ProductCategory
+            {
+                ProductId = productUpdate.Id,
+                CategoryId = request.CategoryIds.First()
+            };
+            await _productCategoryService.Update(productCategory);
             if (request.ThumbnailImage.Count != 0)
             {
                 await _productImageService.Delete(request.Id);

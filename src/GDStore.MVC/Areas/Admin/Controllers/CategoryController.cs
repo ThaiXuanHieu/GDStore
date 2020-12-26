@@ -2,11 +2,13 @@
 using System.Threading.Tasks;
 using GDStore.MVC.Services;
 using GDStore.ViewModel.Categories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Nancy.Json;
 
 namespace GDStore.MVC.Areas.Admin.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class CategoryController : Controller
     {
