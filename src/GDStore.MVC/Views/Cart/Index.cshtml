@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Giỏ hàng";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,54 +9,14 @@
         <div class="your-cart">
             <div class="title">Giỏ hàng</div>
             <div class="row mt-4 mb-2">
-                <p><a href="#">❮ Mua thêm sản phẩm khác</a></p>
+                <p><a href="/Home/Index">❮ Mua thêm sản phẩm khác</a></p>
             </div>
             <div class="list-cart">
-                <div class="cart-item d-flex justify-content-between">
-                    <div class="img-product">
-                        <img src="/img/product/male/product-2.webp" alt="" class="w-100">
-                    </div>
-                    <div class="">
-                        <p>Giày Thể Thao Nam Biti's Hunter X Matcha DSMH03400XMN (Xanh Mi Nơ)</p>
-                        <div class="action-cart">
-                            <a href="#"><i class="fas fa-trash"></i> Xóa</a>
-                        </div>
-                    </div>
-                    <div class="cart-item-price">
-                        <p><strong>500.000₫</strong></p>
-                        <p><del>900.000₫</del> <label class="badge badge-warning">-50%</label></p>
-                    </div>
-                    <div class="action-quantity">
-                        <button class="btn-decre btn-change-qty" onclick="changeQty(this)">-</button>
-                        <input class="quantity" type="text" value="1">
-                        <button class="btn-incre btn-change-qty" onclick="changeQty(this)">+</button>
-                    </div>
-                </div>
-                <hr>
-                <div class="cart-item d-flex justify-content-between">
-                    <div class="img-product">
-                        <img src="/img/product/male/product-2.webp" alt="" class="w-100">
-                    </div>
-                    <div class="">
-                        <p>Giày Thể Thao Nam Biti's Hunter X Matcha DSMH03400XMN (Xanh Mi Nơ)</p>
-                        <div class="action-cart">
-                            <a href="#"><i class="fas fa-trash"></i> Xóa</a>
-                        </div>
-                    </div>
-                    <div class="cart-item-price">
-                        <p><strong>500.000₫</strong></p>
-                        <p><del>900.000₫</del> <label class="badge badge-warning">-50%</label></p>
-                    </div>
-                    <div class="action-quantity">
-                        <button class="btn-decre btn-change-qty" onclick="changeQty(this)">-</button>
-                        <input class="quantity" type="text" value="1">
-                        <button class="btn-incre btn-change-qty" onclick="changeQty(this)">+</button>
-                    </div>
-                </div>
-                <hr>
+                
+                
             </div>
-            <div class="total clearfix">
-                <p class="float-right"><strong>Tổng tiền: 1.000.000₫</strong></p>
+            <div class="clearfix">
+                <p class="float-right"><strong class="total"></strong></p>
             </div>
         </div>
         <form action="#" method="POST">
@@ -132,3 +92,6 @@
     </div>
 </section>
 
+@section Scripts{
+    <script src="~/js/controllers/cartController.js"></script>
+}

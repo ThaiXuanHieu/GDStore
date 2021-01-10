@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace GDStore.MVC
 {
@@ -29,6 +30,12 @@ namespace GDStore.MVC
                     options.LoginPath = "/Account/Login";
                     options.AccessDeniedPath = "/User/Forbidden/";
                 });
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
+
             services.AddHttpClient<IProductApiClient, ProductApiClient>();
             services.AddHttpClient<ICategoryApiClient, CategoryApiClient>();
             services.AddHttpClient<IUserApiClient, UserApiClient>();
@@ -58,7 +65,7 @@ namespace GDStore.MVC
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapAreaControllerRoute(
