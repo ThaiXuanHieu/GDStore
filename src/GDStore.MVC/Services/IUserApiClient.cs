@@ -10,5 +10,7 @@ namespace GDStore.MVC.Services
     public interface IUserApiClient
     {
         Task<ApiResult<string>> Login(LoginRequest request);
+        Task<ApiResult<bool>> Register(RegisterRequest request);
+        Task<IEnumerable<UserVm>> GetAll();
     }
 }

@@ -200,3 +200,5 @@ F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.Infrastructure.dl
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.Api.pdb
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\GDStore.Infrastructure.pdb
 F:\Web\GDStore\src\GDStore.MVC\bin\Debug\netcoreapp3.1\appsettings.Production.json
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\User\Add.cshtml.g.cs
+F:\Web\GDStore\src\GDStore.MVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\User\List.cshtml.g.cs

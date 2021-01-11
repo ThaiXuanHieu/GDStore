@@ -2,11 +2,13 @@
 using GDStore.Domain.Entities;
 using GDStore.ViewModel.Users;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +29,23 @@ namespace GDStore.Application.Users
             _roleManager = roleManager;
             _config = config;
         }
+
+        public async Task<IEnumerable<UserVm>> GetUsers()
+        {
+            var users = _userManager.Users;
+            var userVms = await users.Select(x => new UserVm()
+            {
+                Id = x.Id,
+                FirstName = x.FirstName,
+                LastName = x.LastName,
+                UserName = x.UserName,
+                Email = x.Email,
+                PhoneNumber = x.PhoneNumber
+            }).ToListAsync();
+
+            return userVms;
+        }
+
         public async Task<ApiResult<string>> Login(LoginRequest request)
         {
             var user = await _userManager.FindByEmailAsync(request.Email);
@@ -59,6 +78,34 @@ namespace GDStore.Application.Users
                 signingCredentials: creds);
 
             return new ApiSuccessResult<string>(new JwtSecurityTokenHandler().WriteToken(token));
+        }
+
+        public async Task<ApiResult<bool>> Register(RegisterRequest request)
+        {
+            var user = await _userManager.FindByNameAsync(request.UserName);
+            if (user != null)
+            {
+                return new ApiErrorResult<bool>("Tài khoản đã tồn tại");
+            }
+            if (await _userManager.FindByEmailAsync(request.Email) != null)
+            {
+                return new ApiErrorResult<bool>("Emai đã tồn tại");
+            }
+
+            user = new AppUser()
+            {
+                Email = request.Email,
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                UserName = request.UserName,
+                PhoneNumber = request.PhoneNumber
+            };
+            var result = await _userManager.CreateAsync(user, request.Password);
+            if (result.Succeeded)
+            {
+                return new ApiSuccessResult<bool>();
+            }
+            return new ApiErrorResult<bool>("Đăng ký không thành công");
         }
     }
 }

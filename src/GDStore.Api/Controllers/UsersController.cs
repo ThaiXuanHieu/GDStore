@@ -39,5 +39,28 @@ namespace GDStore.Api.Controllers
             return Ok(result);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var result = await _userService.Register(request);
+            if (!result.IsSuccessed)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var users = await _userService.GetUsers();
+            return Ok(users);
+        }
     }
 }

@@ -12,14 +12,19 @@ using System.Threading.Tasks;
 
 namespace GDStore.MVC.Services
 {
-    public class UserApiClient : IUserApiClient
+    public class UserApiClient : BaseApiClient, IUserApiClient
     {
         private readonly HttpClient _client;
         private readonly IConfiguration _config;
-        public UserApiClient(HttpClient client, IConfiguration config)
+        public UserApiClient(HttpClient client, IConfiguration config) : base(client, config)
         {
             _client = client;
             _config = config;
+        }
+
+        public async Task<IEnumerable<UserVm>> GetAll()
+        {
+            return await GetListAsync<UserVm>("/api/users");
         }
         public async Task<ApiResult<string>> Login(LoginRequest request)
         {
@@ -32,6 +37,19 @@ namespace GDStore.MVC.Services
                 return JsonConvert.DeserializeObject<ApiSuccessResult<string>>(await response.Content.ReadAsStringAsync());
             }
             return JsonConvert.DeserializeObject<ApiErrorResult<string>>(await response.Content.ReadAsStringAsync());
+        }
+
+        public async Task<ApiResult<bool>> Register(RegisterRequest request)
+        {
+            var json = JsonConvert.SerializeObject(request);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            _client.BaseAddress = new Uri(_config[Constants.AppSettings.BaseAddress]);
+            var response = await _client.PostAsync("/api/users/", httpContent);
+            var result = await response.Content.ReadAsStringAsync();
+            if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject<ApiSuccessResult<bool>>(result);
+
+            return JsonConvert.DeserializeObject<ApiErrorResult<bool>>(result);
         }
     }
 }
