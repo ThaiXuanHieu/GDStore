@@ -12,5 +12,7 @@ namespace GDStore.Application.Users
         Task<ApiResult<string>> Login(LoginRequest request);
         Task<ApiResult<bool>> Register(RegisterRequest request);
         Task<IEnumerable<UserVm>> GetUsers();
+        Task<ApiResult<UserVm>> GetUser(Guid id);
+        Task<ApiResult<bool>> Update(Guid id, UserUpdateRequest request);
     }
 }

@@ -40,7 +40,43 @@ namespace GDStore.MVC.Areas.Admin.Controllers
             var result = await _userApiClient.Register(request);
             if (result.IsSuccessed)
             {
-                TempData["message"] = "Thêm sản phẩm thành công";
+                TempData["message"] = "Thêm người dùng thành công";
+                return RedirectToAction("List");
+            }
+
+            return View(request);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(Guid id)
+        {
+            var result = await _userApiClient.GetUser(id);
+            if (result.IsSuccessed)
+            {
+                var userVm = result.ResultObj;
+                var userUpdateRequest = new UserUpdateRequest()
+                {
+                    FirstName = userVm.FirstName,
+                    LastName = userVm.LastName,
+                    Email = userVm.Email,
+                    PhoneNumber = userVm.PhoneNumber,
+                    Id = id
+                };
+                return View(userUpdateRequest);
+            }
+            return RedirectToAction("Error", "Home");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(UserUpdateRequest request)
+        {
+            if (!ModelState.IsValid)
+                return View(request);
+
+            var result = await _userApiClient.Update(request.Id, request);
+            if (result.IsSuccessed)
+            {
+                TempData["result"] = "Cập nhật người dùng thành công";
                 return RedirectToAction("List");
             }
 

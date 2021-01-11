@@ -26,6 +26,18 @@ namespace GDStore.MVC.Services
         {
             return await GetListAsync<UserVm>("/api/users");
         }
+
+        public async Task<ApiResult<UserVm>> GetUser(Guid id)
+        {
+            _client.BaseAddress = new Uri(_config[Constants.AppSettings.BaseAddress]);
+            var response = await _client.GetAsync($"/api/users/{id}");
+            var result = await response.Content.ReadAsStringAsync();
+            if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject<ApiSuccessResult<UserVm>>(result);
+
+            return JsonConvert.DeserializeObject<ApiErrorResult<UserVm>>(result);
+        }
+
         public async Task<ApiResult<string>> Login(LoginRequest request)
         {
             var json = JsonConvert.SerializeObject(request);
@@ -45,6 +57,19 @@ namespace GDStore.MVC.Services
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
             _client.BaseAddress = new Uri(_config[Constants.AppSettings.BaseAddress]);
             var response = await _client.PostAsync("/api/users/", httpContent);
+            var result = await response.Content.ReadAsStringAsync();
+            if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject<ApiSuccessResult<bool>>(result);
+
+            return JsonConvert.DeserializeObject<ApiErrorResult<bool>>(result);
+        }
+
+        public async Task<ApiResult<bool>> Update(Guid id, UserUpdateRequest request)
+        {
+            var json = JsonConvert.SerializeObject(request);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            _client.BaseAddress = new Uri(_config[Constants.AppSettings.BaseAddress]);
+            var response = await _client.PutAsync($"/api/users/{id}", httpContent);
             var result = await response.Content.ReadAsStringAsync();
             if (response.IsSuccessStatusCode)
                 return JsonConvert.DeserializeObject<ApiSuccessResult<bool>>(result);
