@@ -16,11 +16,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System.Collections.Generic;
 
 namespace GDStore.Api
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,6 +33,12 @@ namespace GDStore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var clientUrls = new Dictionary<string, string>
+            {
+                ["Mvc"] = Configuration["ClientUrl:Mvc"],
+                ["Swagger"] = Configuration["ClientUrl:Swagger"]
+            };
+
             services.AddInfrastructure(Configuration);
 
             services.AddTransient<IBrandService, BrandService>();
@@ -44,7 +52,18 @@ namespace GDStore.Api
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
 
             services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>());
-           
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.WithOrigins(clientUrls["Mvc"])
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Swagger GDStore", Version = "v1" });
@@ -72,6 +91,8 @@ namespace GDStore.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger GDStore V1");
             });
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {

@@ -154,3 +154,59 @@ delegate.addEventListener("change", function () {
         document.querySelector(".customer-delegate").style.display = "none";
     }
 });
+
+
+getProvince();
+
+$('#ddlProvince').on('change', function () {
+    var provinceId = $(this).val();
+    getDistrict(provinceId);
+});
+
+$('#ddlDistrict').on('change', function () {
+    var districtId = $(this).val();
+    getWards(districtId);
+});
+
+$('#ddlWards').on('change', function () {
+    
+});
+
+function getProvince() {
+    $.get('https://vapi.vnappmob.com/api/province/', function (data) {
+        var html = '';
+        html += '<option value="0">--Tỉnh/Thành phố--</option>';
+        $.each(data, function (index, item) {
+            for (let i = 0; i < item.length; i++) {
+                html += '<option value=' + item[i].province_id + '>' + item[i].province_name + '</option>';
+            }
+        });
+        $('#ddlProvince').html(html);
+    });
+}
+
+function getDistrict(provinceId) {
+    $.get('https://vapi.vnappmob.com/api/province/district/' + provinceId, function (data) {
+        var html = '';
+        html += '<option value="0">--Quận/Huyện--</option>';
+        $.each(data, function (index, item) {
+            for (let i = 0; i < item.length; i++) {
+                html += '<option value=' + item[i].district_id + '>' + item[i].district_name + '</option>';
+            }
+        });
+        $('#ddlDistrict').html(html);
+    });
+}
+
+function getWards(districtId) {
+    $.get('https://vapi.vnappmob.com/api/province/ward/' + districtId, function (data) {
+        var html = '';
+        html += '<option value="0">--Phường/Xã--</option>';
+        $.each(data, function (index, item) {
+            for (let i = 0; i < item.length; i++) {
+                html += '<option value=' + item[i].ward_id + '>' + item[i].ward_name + '</option>';
+            }
+        });
+        $('#ddlWards').html(html);
+    });
+}
