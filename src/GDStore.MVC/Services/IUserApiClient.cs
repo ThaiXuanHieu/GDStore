@@ -14,5 +14,6 @@ namespace GDStore.MVC.Services
         Task<IEnumerable<UserVm>> GetAll();
         Task<ApiResult<UserVm>> GetUser(Guid id);
         Task<ApiResult<bool>> Update(Guid id, UserUpdateRequest request);
+        Task<ApiResult<bool>> Delete(Guid id);
     }
 }

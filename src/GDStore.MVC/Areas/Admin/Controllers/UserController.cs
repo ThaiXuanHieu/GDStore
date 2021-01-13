@@ -82,5 +82,18 @@ namespace GDStore.MVC.Areas.Admin.Controllers
 
             return View(request);
         }
+
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var result = await _userApiClient.Delete(id);
+            if (result.IsSuccessed)
+            {
+                TempData["result"] = "Xóa người dùng thành công";
+                return RedirectToAction("List");
+            }
+
+            TempData["result"] = "Xóa người dùng thất bại";
+            return RedirectToAction("List");
+        }
     }
 }

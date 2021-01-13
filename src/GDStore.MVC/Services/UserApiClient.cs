@@ -22,6 +22,17 @@ namespace GDStore.MVC.Services
             _config = config;
         }
 
+        public async Task<ApiResult<bool>> Delete(Guid id)
+        {
+            _client.BaseAddress = new Uri(_config[Constants.AppSettings.BaseAddress]);
+            var response = await _client.DeleteAsync($"/api/users/{id}");
+            var result = await response.Content.ReadAsStringAsync();
+            if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject<ApiSuccessResult<bool>>(result);
+
+            return JsonConvert.DeserializeObject<ApiErrorResult<bool>>(result);
+        }
+
         public async Task<IEnumerable<UserVm>> GetAll()
         {
             return await GetListAsync<UserVm>("/api/users");
