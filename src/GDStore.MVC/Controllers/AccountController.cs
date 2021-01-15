@@ -73,9 +73,11 @@ namespace GDStore.MVC.Controllers
 
             return principal;
         }
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            return View();
+            await HttpContext.SignOutAsync(
+                        CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Home");
         }
         public IActionResult Register()
         {
