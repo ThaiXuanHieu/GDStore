@@ -95,7 +95,7 @@ body {
     background-color: #f7f7f7;
 }
 
-.slide-banner {
+.slide-banner, .pt-65px {
     padding-top: 65px;
 }
 
