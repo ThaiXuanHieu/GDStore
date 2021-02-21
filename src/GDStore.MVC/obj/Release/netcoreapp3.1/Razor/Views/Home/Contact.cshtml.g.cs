@@ -13,21 +13,28 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
+#line 2 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
 using GDStore.MVC;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
+#line 3 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
 using GDStore.MVC.Models;
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
+using GDStore.Domain.Entities;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"42ca4a75f232d0e3a86d2ab4a9f81cdf4ae311ad", @"/Views/Home/Contact.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0d20c89e717bfb565dfc7813bef1a3b1a23c0705", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"74c963f7eff9981e5d68544477c0ed8fcb0fd6c4", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Contact : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("action", new global::Microsoft.AspNetCore.Html.HtmlString(""), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -67,7 +74,7 @@ using GDStore.MVC.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<section class=\"contact pt-65px\">\r\n    <div class=\"container\">\r\n        <div class=\"mt-3\">\r\n            <h5>Để lại lời nhắn cho chúng tôi</h5>\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "42ca4a75f232d0e3a86d2ab4a9f81cdf4ae311ad3924", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "42ca4a75f232d0e3a86d2ab4a9f81cdf4ae311ad4093", async() => {
                 WriteLiteral("\r\n                <div class=\"form-group\">\r\n                    <label");
                 BeginWriteAttribute("for", " for=\"", 336, "\"", 342, 0);
                 EndWriteAttribute();

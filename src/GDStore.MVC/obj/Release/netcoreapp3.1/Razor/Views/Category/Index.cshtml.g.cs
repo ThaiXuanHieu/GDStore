@@ -13,21 +13,28 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
+#line 2 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
 using GDStore.MVC;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
+#line 3 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
 using GDStore.MVC.Models;
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
+using GDStore.Domain.Entities;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d48fb788cf0207444988f6c225158997c4077bb", @"/Views/Category/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0d20c89e717bfb565dfc7813bef1a3b1a23c0705", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"74c963f7eff9981e5d68544477c0ed8fcb0fd6c4", @"/Views/_ViewImports.cshtml")]
     public class Views_Category_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -148,7 +155,7 @@ using GDStore.MVC.Models;
             BeginWriteAttribute("id", " id=\"", 2259, "\"", 2264, 0);
             EndWriteAttribute();
             WriteLiteral(" class=\"form-control\">\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d48fb788cf0207444988f6c225158997c4077bb7947", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d48fb788cf0207444988f6c225158997c4077bb8116", async() => {
                 WriteLiteral("Bán chạy nhất");
             }
             );
@@ -164,7 +171,7 @@ using GDStore.MVC.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d48fb788cf0207444988f6c225158997c4077bb9145", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d48fb788cf0207444988f6c225158997c4077bb9314", async() => {
                 WriteLiteral("Mới nhất");
             }
             );
@@ -180,7 +187,7 @@ using GDStore.MVC.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d48fb788cf0207444988f6c225158997c4077bb10338", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d48fb788cf0207444988f6c225158997c4077bb10507", async() => {
                 WriteLiteral("Cũ nhất");
             }
             );
@@ -196,7 +203,7 @@ using GDStore.MVC.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d48fb788cf0207444988f6c225158997c4077bb11531", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d48fb788cf0207444988f6c225158997c4077bb11700", async() => {
                 WriteLiteral("Giá: Tăng dần");
             }
             );
@@ -212,7 +219,7 @@ using GDStore.MVC.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d48fb788cf0207444988f6c225158997c4077bb12730", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6d48fb788cf0207444988f6c225158997c4077bb12899", async() => {
                 WriteLiteral("Giá: Giảm dần");
             }
             );

@@ -13,21 +13,28 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
+#line 2 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
 using GDStore.MVC;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
+#line 3 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
 using GDStore.MVC.Models;
 
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
+using GDStore.Domain.Entities;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"98739bee65f903e33ead928cb2bd265e0bb6e568", @"/Views/Account/CreateAddressBook.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0d20c89e717bfb565dfc7813bef1a3b1a23c0705", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"74c963f7eff9981e5d68544477c0ed8fcb0fd6c4", @"/Views/_ViewImports.cshtml")]
     public class Views_Account_CreateAddressBook : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("value", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -117,7 +124,7 @@ using GDStore.MVC.Models;
             BeginWriteAttribute("class", " class=\"", 2191, "\"", 2199, 0);
             EndWriteAttribute();
             WriteLiteral(">\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98739bee65f903e33ead928cb2bd265e0bb6e5686967", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98739bee65f903e33ead928cb2bd265e0bb6e5687136", async() => {
                 WriteLiteral(@"
                         <div class=""form-group"">
                             <input type=""text"" placeholder=""Họ và tên"" class=""form-control"">
@@ -136,7 +143,7 @@ using GDStore.MVC.Models;
                 BeginWriteAttribute("id", " id=\"", 2970, "\"", 2975, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\"form-control\">\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98739bee65f903e33ead928cb2bd265e0bb6e5688288", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98739bee65f903e33ead928cb2bd265e0bb6e5688457", async() => {
                     WriteLiteral("Phường/Xã");
                 }
                 );
@@ -157,7 +164,7 @@ using GDStore.MVC.Models;
                 BeginWriteAttribute("id", " id=\"", 3262, "\"", 3267, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\"form-control\">\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98739bee65f903e33ead928cb2bd265e0bb6e56810032", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98739bee65f903e33ead928cb2bd265e0bb6e56810201", async() => {
                     WriteLiteral("Quận/Huyện");
                 }
                 );
@@ -178,7 +185,7 @@ using GDStore.MVC.Models;
                 BeginWriteAttribute("id", " id=\"", 3555, "\"", 3560, 0);
                 EndWriteAttribute();
                 WriteLiteral(" class=\"form-control\">\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98739bee65f903e33ead928cb2bd265e0bb6e56811778", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98739bee65f903e33ead928cb2bd265e0bb6e56811947", async() => {
                     WriteLiteral("Tỉnh/Thành phố");
                 }
                 );

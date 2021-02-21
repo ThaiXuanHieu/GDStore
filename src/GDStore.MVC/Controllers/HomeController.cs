@@ -6,6 +6,8 @@ using GDStore.MVC.Services;
 using Microsoft.Extensions.Configuration;
 using GDStore.Application.Common;
 using System.Threading.Tasks;
+using GDStore.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace GDStore.MVC.Controllers
 {

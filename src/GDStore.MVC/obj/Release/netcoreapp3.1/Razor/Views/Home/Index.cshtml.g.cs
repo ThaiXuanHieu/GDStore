@@ -13,15 +13,22 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
+#line 2 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
 using GDStore.MVC;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
+#line 3 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
 using GDStore.MVC.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "F:\Web\GDStore\src\GDStore.MVC\Views\_ViewImports.cshtml"
+using GDStore.Domain.Entities;
 
 #line default
 #line hidden
@@ -34,7 +41,7 @@ using GDStore.Application.Common;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e23744f4085a50732770d0e5b50bbac6baf0849a", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0d20c89e717bfb565dfc7813bef1a3b1a23c0705", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"74c963f7eff9981e5d68544477c0ed8fcb0fd6c4", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<GDStore.ViewModel.Products.ProductVm>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/img/banner-1.webp"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -94,7 +101,7 @@ using GDStore.Application.Common;
             BeginWriteAttribute("href", " href=\"", 795, "\"", 802, 0);
             EndWriteAttribute();
             WriteLiteral(">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e23744f4085a50732770d0e5b50bbac6baf0849a6327", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e23744f4085a50732770d0e5b50bbac6baf0849a6496", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -114,7 +121,7 @@ using GDStore.Application.Common;
             BeginWriteAttribute("href", " href=\"", 953, "\"", 960, 0);
             EndWriteAttribute();
             WriteLiteral(">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e23744f4085a50732770d0e5b50bbac6baf0849a7835", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e23744f4085a50732770d0e5b50bbac6baf0849a8004", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -134,7 +141,7 @@ using GDStore.Application.Common;
             BeginWriteAttribute("href", " href=\"", 1111, "\"", 1118, 0);
             EndWriteAttribute();
             WriteLiteral(">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e23744f4085a50732770d0e5b50bbac6baf0849a9345", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e23744f4085a50732770d0e5b50bbac6baf0849a9514", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
