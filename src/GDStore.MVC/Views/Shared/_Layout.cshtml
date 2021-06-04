@@ -1,6 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<AppUser> SignInManager
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -58,7 +56,7 @@
                 <div class="account col-md-2">
                     <div class="d-flex align-items-center">
                         <i class="fas fa-user fa-lg"></i>
-                        @if (SignInManager.IsSignedIn(User))
+                        @if (!String.IsNullOrEmpty(User.Identity.Name))
                         {
                             <a href="/Account/ManagerAccount" class="ml-1">@User.Identity.Name</a>
                         }

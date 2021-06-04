@@ -22,7 +22,7 @@ namespace GDStore.Api
 {
     public class Startup
     {
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+        // readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -33,11 +33,11 @@ namespace GDStore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var clientUrls = new Dictionary<string, string>
-            {
-                ["Mvc"] = Configuration["ClientUrl:Mvc"],
-                ["Swagger"] = Configuration["ClientUrl:Swagger"]
-            };
+            // var clientUrls = new Dictionary<string, string>
+            // {
+            //     ["Mvc"] = Configuration["ClientUrl:Mvc"],
+            //     ["Swagger"] = Configuration["ClientUrl:Swagger"]
+            // };
 
             services.AddInfrastructure(Configuration);
 
@@ -53,16 +53,16 @@ namespace GDStore.Api
 
             services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RegisterValidator>());
 
-            services.AddCors(options =>
-            {
-                options.AddPolicy(MyAllowSpecificOrigins,
-                builder =>
-                {
-                    builder.WithOrigins(clientUrls["Mvc"])
-                        .AllowAnyHeader()
-                        .AllowAnyMethod();
-                });
-            });
+            // services.AddCors(options =>
+            // {
+            //     options.AddPolicy(MyAllowSpecificOrigins,
+            //     builder =>
+            //     {
+            //         builder.WithOrigins(clientUrls["Mvc"])
+            //             .AllowAnyHeader()
+            //             .AllowAnyMethod();
+            //     });
+            // });
 
             services.AddSwaggerGen(c =>
             {
@@ -92,7 +92,7 @@ namespace GDStore.Api
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger GDStore V1");
             });
 
-            app.UseCors(MyAllowSpecificOrigins);
+            // app.UseCors(MyAllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {
